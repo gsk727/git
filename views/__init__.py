@@ -2,5 +2,5 @@
 
 from index import v
 
-__all__ = = ["v",]
+__all__ = ["v",]
 

@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 # new branch
 from flask import Flask
-from view import index
+from views import index
 
 app = Flask(__name__)
 app.register_blueprint(index.v)
