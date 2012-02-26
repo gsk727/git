@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<meta http-equiv="charset" content="utf8">
+		<script type="text/javascript" src="{{ url_for('static', filename='jquery-1.7.js') }}" ></script> 
+		<script type="text/javascript" src="{{ url_for('static', filename='login.js') }}" ></script> 
+		<title> 登陆 </title>
+	</head>
+	<body>
+	<div style="width:400px; margin:0 auto; text-align:center">
+		<div style="float:left; text-align:left">
+		<form action= "{{ url_for('.login') }}" method="post" id="loginfrm">
+			<table>
+				<tbody>
+					<tr>
+					<td>用户名</td>
+					<td> <input type="text"  id="user_id" maxlength=100 name="username" onBlur="Login.checkUser()" /> </td>
+					</tr>
+			
+					<tr>
+					<td>密码</td>
+					<td>  <input type="password" id="pwd_id" name="password" /> </td>
+					</tr>
+					<tr>
+					<td>  <input type="submit" value="登陆" /> </td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		</div>
+		<div style="float:left">
+		</div>
+		<div style="float:right; text-align:left">
+			<span> 注册 </span>
+		</div>
+	</div>
+	</body>
+</html>

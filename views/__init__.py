@@ -1,6 +1,3 @@
-#-*-coding:utf-8-*-
+from  loginview import loginView
 
-from index import v
-
-__all__ = ["v",]
-
+__all__ = [ "loginView", ]
