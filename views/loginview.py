@@ -6,7 +6,7 @@ from flask.views import MethodView
 from flask import render_template
 from flask import request, session, redirect, url_for
 import pymongo
-db = pymongo.Connection("127.0.0.1", 27017).app
+# db = pymongo.Connection("127.0.0.1", 27017).app
 
 loginView = Blueprint("LoginView", __name__, static_folder="static", template_folder="templates")
 
@@ -23,10 +23,10 @@ class LoginView(MethodView):
 	def post(self):
 		username, password = request.form["username"], request.form["password"]
 		print "==============", username, password
-		if db.user.find({"username":username, "password":password}).count() <=0:
-			return redirect(url_for(".login"))
-		else:
-			session.login = True
+		#if db.user.find({"username":username, "password":password}).count() <=0:
+		#	return redirect(url_for(".login"))
+		#else:
+		#	session.login = True
 		return "hello world"
 
 	def put(self):
