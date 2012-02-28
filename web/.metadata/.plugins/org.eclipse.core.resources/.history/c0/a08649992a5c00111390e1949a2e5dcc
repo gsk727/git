@@ -1,0 +1,17 @@
+<html>
+	<head> <title> index.html </title> </head>
+	
+	<body>
+			<div> <h1> hello world</h1> </div>
+			<div>
+				<form action="/get/"  method="post"> 
+					user:<input type="text" />
+					password:<input type="password"/>
+					<input type="submit" value="ok"/>
+				</form>
+			
+			</div>
+			
+	</body>
+
+</html>

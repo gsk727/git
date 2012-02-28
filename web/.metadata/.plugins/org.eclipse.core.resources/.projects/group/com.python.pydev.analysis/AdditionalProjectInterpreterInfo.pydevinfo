@@ -1,0 +1,91 @@
+-- VERSION_3
+-- START DISKCACHE
+/home/gsk/web/.metadata/.plugins/org.eclipse.core.resources/.projects/group/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+magazine|0|/home/gsk/web/group/magazine.py
+db|0|/home/gsk/web/group/db.py
+bp|0|/home/gsk/web/group/bp.py
+bp1|0|/home/gsk/web/group/bp1.py
+publish|0|/home/gsk/web/group/publish.py
+myApp|0|/home/gsk/web/group/myApp.py
+m|0|/home/gsk/web/group/m.py
+cfg|0|/home/gsk/web/group/cfg.py
+run|0|/home/gsk/web/group/run.py
+j|0|/home/gsk/web/group/j.py
+groups|0|/home/gsk/web/group/groups.py
+main|0|/home/gsk/web/group/main.py
+-- END DISKCACHE
+-- START DICTIONARY
+24
+14=Publish
+4=db
+16=Magazine
+23=iMagazine
+15=PublishView
+2=m
+3=myApp
+6=j
+11=run
+24=GroupData
+18=Group
+9=main
+17=Groups
+8=magazine
+12=bp
+1=bp1
+21=Foo
+20=MongoDB.__init__
+19=MongoDB
+13=Publish.__init__
+7=cfg
+10=publish
+22=MagazineView
+5=groups
+-- END DICTIONARY
+-- START TREE 1
+27
+app|3|app!11@app!19@app!27@
+bef|1|before_request!34@
+cli|2|clientId!42@clientid!43@
+cur|1|cursor!51@
+dat|1|DATABASE!59@
+db|2|db!35@db!51@
+deb|1|DEBUG!59@
+foo|1|Foo!17@
+get|3|get_clientId!42@GetGroups!42@getjson!50@
+gro|3|Groups!41@GroupData!33@Group!41@
+hos|1|HOST!59@
+ima|1|iMagazine!65@
+jso|1|json1!50@
+loa|1|load!26@
+mag|2|MagazineView!65@Magazine!65@
+mai|1|main!74@
+mon|1|MongoDB!33@
+pas|1|PASSWORD!59@
+por|1|PORT!59@
+pub|2|PublishView!81@Publish!81@
+res|2|res!51@result!50@
+run|1|run!90@
+sen|1|send_view!42@
+sho|3|show!50@show!98@showGroups!42@
+sim|1|simple_page!99@
+use|1|USER!59@
+vie|1|view_func!19@
+-- END TREE
+-- START TREE 2
+14
+__c|1|__cache!13&83@
+__i|6|__init__!14&82@__init__!15&82@__init__!16&66@__init__!17&42@__init__!18&42@__init__!19&34@
+clo|1|close!19&34@
+con|1|conn!20&35@
+db|1|db!20&35@
+del|1|delete!21&18@
+dis|4|dispatch_request!15&82@dispatch_request!17&42@dispatch_request!18&42@dispatch_request!22&66@
+get|5|GetGroupData!19&34@getMagezine!14&82@get!16&66@get!23&66@get!21&18@
+ins|1|instance!19&34@
+nam|1|name!24&35@
+pos|1|post!21&18@
+put|1|put!21&18@
+res|1|reset!19&34@
+sho|2|show!16&66@show!23&66@
+-- END TREE

@@ -1,0 +1,32 @@
+-- VERSION_3
+-- START DISKCACHE
+/home/gsk/web/.metadata/.plugins/org.eclipse.core.resources/.projects/server/com.python.pydev.analysis/v1_indexcache
+.v1_indexcache
+main|0|/home/gsk/web/server/main.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+2=MongoJEncoder
+1=main
+-- END DICTIONARY
+-- START TREE 1
+14
+_ch|1|_checkLogin!10@
+app|1|app!11@
+d|1|d!11@
+db|1|db!11@
+fie|1|fields!11@
+get|4|getUser!10@getMaxID!10@get!10@getGroups!10@
+log|1|login!10@
+mai|1|main!10@
+mon|1|MongoJEncoder!9@
+nam|1|name!11@
+pas|1|password!11@
+reg|1|register!10@
+res|1|res!11@
+use|6|usersex!11@username!11@userid!11@useremail!11@usernick!11@userInfo!11@
+-- END TREE
+-- START TREE 2
+1
+def|1|default!2&10@
+-- END TREE

@@ -1,0 +1,6 @@
+ul
+{
+	width:600px;
+	height:400px;
+	list-style-type:none;
+}

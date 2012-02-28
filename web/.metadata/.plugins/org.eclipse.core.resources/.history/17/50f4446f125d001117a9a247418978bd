@@ -1,0 +1,15 @@
+.main
+{
+	display: inline-block; 
+	position: relative; 
+	padding: 0; 
+	text-decoration: none !important; ]
+	cursor: pointer; 
+	text-align: center; 
+	zoom: 1; 
+	overflow: visible;
+	background: rgb(250,126,255);
+	margin-left:auto;
+	margin-right:auto
+	
+}

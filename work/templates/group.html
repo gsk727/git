@@ -1,0 +1,17 @@
+<html>
+     <body>
+        <H1> {{ gname }}  <H1>
+       
+
+       {% for m in mres %}
+           <p> <a href=/magazine/{{ m.id }}  >  {{ m.title }} </a> </p>
+    
+       {% endfor %}
+       
+        <form action="/groups/{{ gname }}/create_topic"  method="post">
+            <input type="text" name ="title"/> 
+            <input type="submit" value="ok"/>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+MODULES_MANAGER_V2
+bp|/home/gsk/web/group/bp.py
+bp1|/home/gsk/web/group/bp1.py
+cfg|/home/gsk/web/group/cfg.py
+db|/home/gsk/web/group/db.py
+groups|/home/gsk/web/group/groups.py
+j|/home/gsk/web/group/j.py
+m|/home/gsk/web/group/m.py
+magazine|/home/gsk/web/group/magazine.py
+main|/home/gsk/web/group/main.py
+myApp|/home/gsk/web/group/myApp.py
+publish|/home/gsk/web/group/publish.py
+run|/home/gsk/web/group/run.py

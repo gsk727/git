@@ -1,0 +1,11 @@
+ul
+{
+	width:600px;
+	height:400px;
+	
+}
+
+ul li
+{
+	list-style-type:none;
+}

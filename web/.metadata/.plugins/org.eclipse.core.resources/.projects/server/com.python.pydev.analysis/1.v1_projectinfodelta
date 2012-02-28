@@ -1,0 +1,15 @@
+INSTUPmain
+/home/gsk/web/server/main.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|3|2|0&&1|4|2|0&&2|5|2|4&&2|6|2|0&&2|2|2|0&&2|7|2|0&&2|8|2|0&&2|9|2|0&&2|10|2|0&&2|11|2|0&&2|12|2|0
+db=1
+app=3
+getUser=11
+getGroups=10
+get=8
+MongoJEncoder=4
+_checkLogin=7
+main=2
+register=9
+default=5
+login=12
+getMaxID=6

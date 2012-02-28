@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <ul>
+        {% for group in groups %}
+           <li> <a href = "/groups/{{ group.name }}" > {{ group.name }} </a>
+        {% endfor %}
+        </ul>
+    <form action="{{ url_for('groups.groupPost') }}" method=post>
+       组名字 <input type="text" name="name" />
+       <input type="submit", value="确定" />
+       <input type="file" name="file"> 
+    </form>
+
+    </body>
+</html>
+

@@ -1,0 +1,15 @@
+{% block body %}
+    <ul>
+        {{ groups }}
+        {% for gg in groups %}
+            <h1> {{ gg.name }} </h1>
+            {% for gname in gg.groups %}
+            
+                <li><h2> <a  href= "/groups/{{ gg.name }}_{{ gname }}/magazine/{{ g.clientid}}" >  {{ gname }} </a> </h2> 
+            {% endfor %}
+                 
+        {% else %}
+            <li> 什么也没有
+        {% endfor %} 
+    </ul>
+{% endblock %}

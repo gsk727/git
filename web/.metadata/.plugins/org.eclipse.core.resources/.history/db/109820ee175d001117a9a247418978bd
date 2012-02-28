@@ -1,0 +1,20 @@
+<html>
+	<head>    
+		<link type="text/css" href="css/show.css" rel="stylesheet" /> 
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	</head>
+	
+	<script type="text/javascript">
+		
+	</script>
+	
+	<body>
+		<ul>
+			<li> <img  src = "" />
+			<li> b
+		
+		</ul>
+	</body>
+
+
+</html>

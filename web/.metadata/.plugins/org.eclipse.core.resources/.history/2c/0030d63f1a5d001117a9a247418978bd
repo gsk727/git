@@ -1,0 +1,29 @@
+<html>
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+		<link type="text/css" href="css/show.css" rel="stylesheet" /> 
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	</head>
+	
+	<script type="text/javascript">
+		$("#showimg li img").each(function(i){
+			
+			this.src = "test.jpg";
+			
+		});
+	</script>
+	
+	<body>
+		<div id="imgid" style="width: 1628px; height: 585px; display: block;">
+		<li style="width:171px;height:166px;">
+			<div style="height:131px;" class="imgShow">
+				<a onclick="p(event,0,{sr:'0',u:'http://img.cnmo-img.com.cn/370/369771.jpg',f:'http://product.cnmo.com/article/369771.html',t:1});" target="_blank" style="width:174px;height:131px;margin-top:0px; margin-left:-1.5px;" href="/i?ct=503316480&amp;z=&amp;tn=baiduimagedetail&amp;word=html&amp;in=9186&amp;cl=2&amp;lm=-1&amp;st=&amp;pn=1&amp;rn=1&amp;di=44068557555&amp;ln=1998&amp;fr=&amp;fm=&amp;fmq=1329890040375_R&amp;ic=&amp;s=&amp;se=&amp;sme=0&amp;tab=&amp;width=&amp;height=&amp;face=&amp;is=&amp;istype=" name="pn1"><img onerror="BD.disp.recT({type:'error',pn:'1',self:this});" onload="BD.disp.recT({type:'load',pn:'1',self:this});" style="width: 174px; height: 131px; visibility: visible; background: none repeat scroll 0% 0% transparent;" src="http://t1.baidu.com/it/u=1176729678,2584894812&amp;fm=52&amp;gp=0.jpg" data-large="http://t1.baidu.com/it/u=1176729678,2584894812&amp;fm=52&amp;gp=0.jpg" data-mid="http://t1.baidu.com/it/u=1176729678,2584894812&amp;fm=51&amp;gp=0.jpg" bdsrc="http://t1.baidu.com/it/u=1176729678,2584894812&amp;fm=0&amp;gp=0.jpg" name="pn1"></a></div><p title="来源网址：  http://product.cnmo.com  
+1600x1200 jpg 190k" class="digest">
+				<a target="_blank" onclick="p(event,1,{sr:'0',u:'http://img.cnmo-img.com.cn/370/369771.jpg',f:this.href,t:1});" href="http://product.cnmo.com/article/369771.html" name="pn1">支持ios 苹果发布基于<strong>html</strong>5的</a><span id="fpn1" class="lb imgSizeInfo">1600x1200</span></p></li>
+		</li>
+		
+		</div>
+	</body>
+
+
+</html>

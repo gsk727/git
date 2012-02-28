@@ -1,0 +1,18 @@
+<script type=text/javascript>
+var captured = [];
+var oldArray = Array;
+function Array() {
+  var obj = this, id = 0, capture = function(value) {
+    obj.__defineSetter__(id++, capture);
+    if (value)
+      captured.push(value);
+  };
+  capture();
+}
+</script>
+<script type=text/javascript
+  src=/api/json></script>
+<script type=text/javascript>
+Array = oldArray;
+// now we have all the data in the captured array.
+</script>

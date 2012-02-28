@@ -1,0 +1,31 @@
+<html>
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<link type="text/css" href="css/show.css" rel="stylesheet" /> 
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	</head>
+	
+	<script type="text/javascript">
+		$("#showimg li img").each(function(i){
+			
+			this.src = "test.jpg";
+			
+		});
+	</script>
+	
+	<body>
+		<div id="imgid" style="width: 1000px; height: 700px; display: block;">
+			<li style="width:130px;height:166px;">
+				<div style="height:131px;" class="imgShow">
+					<a onclick="" target="_blank" style="width:104px;height:157px;margin-top:0px; margin-left:13px;" href="" name="pn0">
+					<img onerror="" onload="" style="width: 104px; height: 157px; visibility: visible; background: none repeat scroll 0% 0% transparent;" src="test.jpg" name="pn0"></a>
+				</div>
+				<p title="">
+				<a target="_blank" onclick="" href="" name="pn0">pic1 </a>
+				
+		
+		</div>
+	</body>
+
+
+</html>
