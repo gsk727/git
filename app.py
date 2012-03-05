@@ -10,5 +10,5 @@ app.register_blueprint(loginView)
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
-	
+    app.run(debug=True)
+    print "run server" # 注意这个和nodejs的区别
