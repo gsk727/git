@@ -1,6 +1,0 @@
-# -*- coding:utf-8 -*-
-"""
-python 控制台
-"""
-
-class GameConsole(object):
