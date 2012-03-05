@@ -1,0 +1,563 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs
+END
+_multiprocessing.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_multiprocessing.pyd
+END
+dbm.so
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/dbm.so
+END
+strop.so
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/strop.so
+END
+_sha.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_sha.so
+END
+array.so
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/array.so
+END
+_ctypes_test.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_ctypes_test.pyd
+END
+winsound.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/winsound.pyd
+END
+_curses_panel.so
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_curses_panel.so
+END
+future_builtins.so
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/future_builtins.so
+END
+itertools.so
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/itertools.so
+END
+_md5.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_md5.so
+END
+_testcapi.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_testcapi.pyd
+END
+grp.so
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/grp.so
+END
+_codecs_jp.so
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_codecs_jp.so
+END
+nis.so
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/nis.so
+END
+_tkinter.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_tkinter.pyd
+END
+_heapq.so
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_heapq.so
+END
+time.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/time.so
+END
+audioop.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/audioop.so
+END
+cStringIO.so
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/cStringIO.so
+END
+_sha512.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_sha512.so
+END
+_curses.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_curses.so
+END
+pyexpat.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/pyexpat.pyd
+END
+_ctypes.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_ctypes.so
+END
+_io.so
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_io.so
+END
+_elementtree.so
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_elementtree.so
+END
+bz2.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/bz2.pyd
+END
+gdbm.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/gdbm.so
+END
+_functools.so
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_functools.so
+END
+_testcapi.so
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_testcapi.so
+END
+_codecs_iso2022.so
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_codecs_iso2022.so
+END
+linuxaudiodev.so
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/linuxaudiodev.so
+END
+_codecs_hk.so
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_codecs_hk.so
+END
+binascii.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/binascii.so
+END
+py.ico
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/py.ico
+END
+imageop.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/imageop.so
+END
+termios.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/termios.so
+END
+_elementtree.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_elementtree.pyd
+END
+pyc.ico
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/pyc.ico
+END
+tk85.dll
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/tk85.dll
+END
+_multiprocessing.so
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_multiprocessing.so
+END
+_bsddb.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_bsddb.pyd
+END
+datetime.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/datetime.so
+END
+dl.so
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/dl.so
+END
+_ssl.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_ssl.so
+END
+tclpip85.dll
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/tclpip85.dll
+END
+_msi.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_msi.pyd
+END
+fcntl.so
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/fcntl.so
+END
+_sha256.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_sha256.so
+END
+_json.so
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_json.so
+END
+_codecs_tw.so
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_codecs_tw.so
+END
+_hashlib.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_hashlib.so
+END
+_ssl.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_ssl.pyd
+END
+sqlite3.dll
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/sqlite3.dll
+END
+_codecs_cn.so
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_codecs_cn.so
+END
+syslog.so
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/syslog.so
+END
+readline.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/readline.so
+END
+ossaudiodev.so
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/ossaudiodev.so
+END
+libcurl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/libcurl.dll
+END
+_hotshot.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_hotshot.so
+END
+select.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/select.pyd
+END
+pyexpat.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/pyexpat.so
+END
+operator.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/operator.so
+END
+_codecs_kr.so
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_codecs_kr.so
+END
+zlib.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/zlib.so
+END
+crypt.so
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/crypt.so
+END
+_socket.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_socket.pyd
+END
+_lsprof.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_lsprof.so
+END
+_ctypes_test.so
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_ctypes_test.so
+END
+_bisect.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_bisect.so
+END
+cPickle.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/cPickle.so
+END
+_multibytecodec.so
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_multibytecodec.so
+END
+spwd.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/spwd.so
+END
+_collections.so
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_collections.so
+END
+_random.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_random.so
+END
+select.so
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/select.so
+END
+unicodedata.so
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/unicodedata.so
+END
+_ctypes.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_ctypes.pyd
+END
+_struct.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_struct.so
+END
+_hashlib.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_hashlib.pyd
+END
+_socket.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_socket.so
+END
+resource.so
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/resource.so
+END
+tcl85.dll
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/tcl85.dll
+END
+math.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/math.so
+END
+mmap.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/mmap.so
+END
+_csv.so
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_csv.so
+END
+unicodedata.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/unicodedata.pyd
+END
+parser.so
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/parser.so
+END
+cmath.so
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/cmath.so
+END
+bz2.so
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/bz2.so
+END
+select_d.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/29/trunk/server/pylibs/DLLs/select_d.pyd
+END
+_locale.so
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/31/trunk/server/pylibs/DLLs/_locale.so
+END
+_sqlite3.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/26/trunk/server/pylibs/DLLs/_sqlite3.pyd
+END

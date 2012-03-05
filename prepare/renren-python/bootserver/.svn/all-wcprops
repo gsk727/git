@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/37/trunk/server/bootserver
+END
+Game.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/37/trunk/server/bootserver/Game.hpp
+END
+PythonAPI.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/37/trunk/server/bootserver/PythonAPI.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/37/trunk/server/bootserver/main.cpp
+END
+GameSignal.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/37/trunk/server/bootserver/GameSignal.cpp
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/37/trunk/server/bootserver/common.cpp
+END
+Game.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/37/trunk/server/bootserver/Game.cpp
+END
+PythonAPI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/37/trunk/server/bootserver/PythonAPI.cpp
+END
+GameSignal.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/37/trunk/server/bootserver/GameSignal.hpp
+END
+common.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/37/trunk/server/bootserver/common.hpp
+END

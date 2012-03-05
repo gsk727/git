@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb
+END
+dbshelve.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/dbshelve.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/__init__.py
+END
+dbobj.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/dbobj.py
+END
+dbtables.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/dbtables.py
+END
+db.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/db.py
+END
+dbutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/dbutils.py
+END
+dbrecio.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bsddb/dbrecio.py
+END

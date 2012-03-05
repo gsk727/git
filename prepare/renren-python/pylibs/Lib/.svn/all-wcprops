@@ -1,0 +1,1235 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/29/trunk/server/pylibs/Lib
+END
+rlcompleter.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/rlcompleter.py
+END
+fractions.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/fractions.py
+END
+CGIHTTPServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/CGIHTTPServer.py
+END
+sgmllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sgmllib.py
+END
+genericpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/genericpath.py
+END
+os2emxpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/os2emxpath.py
+END
+markupbase.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/markupbase.py
+END
+_socket_d.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/29/trunk/server/pylibs/Lib/_socket_d.pyd
+END
+dircache.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/dircache.py
+END
+wave.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/wave.py
+END
+nturl2path.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/nturl2path.py
+END
+site.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/site.py
+END
+UserString.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/UserString.py
+END
+symbol.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/symbol.py
+END
+__future__.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/__future__.py
+END
+copy_reg.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/copy_reg.py
+END
+asynchat.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/asynchat.py
+END
+stat.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/stat.py
+END
+sha.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sha.py
+END
+mimetypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mimetypes.py
+END
+pipes.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pipes.py
+END
+SimpleHTTPServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/SimpleHTTPServer.py
+END
+token.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/token.py
+END
+os.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/os.py
+END
+sndhdr.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sndhdr.py
+END
+smtpd.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/smtpd.py
+END
+_abcoll.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_abcoll.py
+END
+xmlrpclib.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/xmlrpclib.py
+END
+optparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/optparse.py
+END
+audiodev.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/audiodev.py
+END
+py_compile.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/py_compile.py
+END
+stringold.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/stringold.py
+END
+threading.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/threading.py
+END
+getpass.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/getpass.py
+END
+uuid.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/uuid.py
+END
+whichdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/whichdb.py
+END
+smtplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/smtplib.py
+END
+tabnanny.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/tabnanny.py
+END
+dumbdbm.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/dumbdbm.py
+END
+imaplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/imaplib.py
+END
+user.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/user.py
+END
+textwrap.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/textwrap.py
+END
+fpformat.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/fpformat.py
+END
+posixpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/posixpath.py
+END
+quopri.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/quopri.py
+END
+symtable.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/symtable.py
+END
+DocXMLRPCServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/DocXMLRPCServer.py
+END
+glob.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/glob.py
+END
+shelve.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/shelve.py
+END
+xmllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/xmllib.py
+END
+tokenize.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/tokenize.py
+END
+warnings.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/warnings.py
+END
+sunau.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sunau.py
+END
+ntpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ntpath.py
+END
+_weakrefset.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_weakrefset.py
+END
+formatter.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/formatter.py
+END
+htmlentitydefs.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/htmlentitydefs.py
+END
+re.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/re.py
+END
+_strptime.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_strptime.py
+END
+mailcap.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mailcap.py
+END
+calendar.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/calendar.py
+END
+bisect.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bisect.py
+END
+gzip.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/gzip.py
+END
+copy.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/copy.py
+END
+netrc.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/netrc.py
+END
+pty.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pty.py
+END
+macpath.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/macpath.py
+END
+modulefinder.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/modulefinder.py
+END
+SocketServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/SocketServer.py
+END
+ftplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ftplib.py
+END
+fnmatch.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/fnmatch.py
+END
+random.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/random.py
+END
+asyncore.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/asyncore.py
+END
+shlex.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/shlex.py
+END
+struct.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/struct.py
+END
+base64.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/base64.py
+END
+socket.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/socket.py
+END
+pickletools.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pickletools.py
+END
+ihooks.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ihooks.py
+END
+stringprep.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/stringprep.py
+END
+decimal.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/decimal.py
+END
+atexit.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/atexit.py
+END
+heapq.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/heapq.py
+END
+difflib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/difflib.py
+END
+cookielib.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/cookielib.py
+END
+BaseHTTPServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/BaseHTTPServer.py
+END
+getopt.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/getopt.py
+END
+inspect.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/inspect.py
+END
+string.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/string.py
+END
+mimetools.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mimetools.py
+END
+shutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/shutil.py
+END
+imghdr.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/imghdr.py
+END
+anydbm.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/anydbm.py
+END
+numbers.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/numbers.py
+END
+runpy.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/runpy.py
+END
+collections.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/collections.py
+END
+traceback.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/traceback.py
+END
+dummy_threading.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/dummy_threading.py
+END
+compileall.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compileall.py
+END
+webbrowser.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/webbrowser.py
+END
+weakref.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/weakref.py
+END
+abc.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/abc.py
+END
+sched.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sched.py
+END
+ast.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ast.py
+END
+csv.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/csv.py
+END
+pyclbr.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pyclbr.py
+END
+__phello__.foo.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/__phello__.foo.py
+END
+commands.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/commands.py
+END
+cgi.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/cgi.py
+END
+posixfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/posixfile.py
+END
+robotparser.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/robotparser.py
+END
+tempfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/tempfile.py
+END
+pdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pdb.py
+END
+nntplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/nntplib.py
+END
+io.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/io.py
+END
+chunk.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/chunk.py
+END
+Cookie.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/Cookie.py
+END
+opcode.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/opcode.py
+END
+pydoc.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pydoc.py
+END
+pstats.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pstats.py
+END
+_pyio.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_pyio.py
+END
+macurl2path.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/macurl2path.py
+END
+MimeWriter.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/MimeWriter.py
+END
+gettext.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/gettext.py
+END
+md5.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/md5.py
+END
+sre_constants.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sre_constants.py
+END
+sunaudio.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sunaudio.py
+END
+urllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/urllib.py
+END
+sre.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sre.py
+END
+htmllib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/htmllib.py
+END
+trace.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/trace.py
+END
+Bastion.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/Bastion.py
+END
+profile.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/profile.py
+END
+aifc.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/aifc.py
+END
+cProfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/cProfile.py
+END
+cmd.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/cmd.py
+END
+types.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/types.py
+END
+sysconfig.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sysconfig.py
+END
+rfc822.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/rfc822.py
+END
+repr.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/repr.py
+END
+code.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/code.py
+END
+contextlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/contextlib.py
+END
+UserDict.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/UserDict.py
+END
+telnetlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/telnetlib.py
+END
+platform.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/platform.py
+END
+Queue.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/Queue.py
+END
+tarfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/tarfile.py
+END
+bdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/bdb.py
+END
+_LWPCookieJar.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_LWPCookieJar.py
+END
+new.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/new.py
+END
+statvfs.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/statvfs.py
+END
+mimify.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mimify.py
+END
+mhlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mhlib.py
+END
+mailbox.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mailbox.py
+END
+_MozillaCookieJar.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_MozillaCookieJar.py
+END
+StringIO.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/StringIO.py
+END
+fileinput.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/fileinput.py
+END
+ssl.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ssl.py
+END
+zipfile.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/zipfile.py
+END
+argparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/argparse.py
+END
+doctest.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/doctest.py
+END
+httplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/httplib.py
+END
+rexec.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/rexec.py
+END
+toaiff.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/toaiff.py
+END
+codeop.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/codeop.py
+END
+hashlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/hashlib.py
+END
+UserList.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/UserList.py
+END
+linecache.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/linecache.py
+END
+urllib2.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/urllib2.py
+END
+pprint.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pprint.py
+END
+colorsys.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/colorsys.py
+END
+_threading_local.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/_threading_local.py
+END
+sets.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sets.py
+END
+filecmp.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/filecmp.py
+END
+tty.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/tty.py
+END
+dummy_thread.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/dummy_thread.py
+END
+plistlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/plistlib.py
+END
+ConfigParser.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ConfigParser.py
+END
+xdrlib.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/xdrlib.py
+END
+subprocess.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/subprocess.py
+END
+cgitb.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/cgitb.py
+END
+dbhash.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/dbhash.py
+END
+uu.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/uu.py
+END
+multifile.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multifile.py
+END
+timeit.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/timeit.py
+END
+urlparse.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/urlparse.py
+END
+locale.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/locale.py
+END
+codecs.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/codecs.py
+END
+antigravity.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/antigravity.py
+END
+sre_compile.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sre_compile.py
+END
+mutex.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/mutex.py
+END
+popen2.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/popen2.py
+END
+SimpleXMLRPCServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/SimpleXMLRPCServer.py
+END
+this.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/this.py
+END
+pickle.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pickle.py
+END
+hmac.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/hmac.py
+END
+functools.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/functools.py
+END
+binhex.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/binhex.py
+END
+dis.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/dis.py
+END
+pkgutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/pkgutil.py
+END
+HTMLParser.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/HTMLParser.py
+END
+imputil.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/imputil.py
+END
+sre_parse.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/sre_parse.py
+END
+keyword.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/keyword.py
+END
+poplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/poplib.py
+END

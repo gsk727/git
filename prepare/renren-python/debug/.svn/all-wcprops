@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/30/trunk/server/debug
+END
+python27_d.lib
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/30/trunk/server/debug/python27_d.lib
+END
+python27_d.dll
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/30/trunk/server/debug/python27_d.dll
+END
+select_d.pyd
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/30/trunk/server/debug/select_d.pyd
+END
+_socket_d.pdb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/30/trunk/server/debug/_socket_d.pdb
+END

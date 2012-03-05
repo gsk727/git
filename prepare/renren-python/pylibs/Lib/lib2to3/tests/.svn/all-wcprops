@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests
+END
+pytree_idempotency.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/pytree_idempotency.py
+END
+test_parser.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_parser.py
+END
+test_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_util.py
+END
+support.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/support.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/__init__.py
+END
+test_fixers.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_fixers.py
+END
+test_main.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_main.py
+END
+test_refactor.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_refactor.py
+END
+test_all_fixers.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_all_fixers.py
+END
+test_pytree.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/tests/test_pytree.py
+END

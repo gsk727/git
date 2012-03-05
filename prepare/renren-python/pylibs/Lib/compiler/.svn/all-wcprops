@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler
+END
+symbols.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/symbols.py
+END
+consts.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/consts.py
+END
+future.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/future.py
+END
+misc.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/misc.py
+END
+pycodegen.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/pycodegen.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/__init__.py
+END
+visitor.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/visitor.py
+END
+pyassem.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/pyassem.py
+END
+transformer.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/transformer.py
+END
+syntax.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/syntax.py
+END
+ast.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/compiler/ast.py
+END

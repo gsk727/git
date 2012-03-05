@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3
+END
+pytree.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/pytree.py
+END
+fixer_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/fixer_util.py
+END
+PatternGrammar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/PatternGrammar.txt
+END
+Grammar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/Grammar.txt
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/__init__.py
+END
+pygram.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/pygram.py
+END
+patcomp.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/patcomp.py
+END
+main.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/main.py
+END
+refactor.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/refactor.py
+END
+fixer_base.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib2to3/fixer_base.py
+END

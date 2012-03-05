@@ -1,0 +1,2 @@
+bson/_cbson.pyd
+pymongo/_cmessage.pyd

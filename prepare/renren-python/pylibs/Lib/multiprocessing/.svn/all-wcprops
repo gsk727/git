@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing
+END
+pool.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/pool.py
+END
+synchronize.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/synchronize.py
+END
+reduction.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/reduction.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/util.py
+END
+heap.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/heap.py
+END
+managers.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/managers.py
+END
+process.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/process.py
+END
+sharedctypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/sharedctypes.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/__init__.py
+END
+forking.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/forking.py
+END
+connection.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/connection.py
+END
+queues.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/multiprocessing/queues.py
+END

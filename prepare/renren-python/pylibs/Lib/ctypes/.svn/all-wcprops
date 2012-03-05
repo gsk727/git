@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ctypes
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ctypes/util.py
+END
+_endian.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ctypes/_endian.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ctypes/__init__.py
+END
+wintypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/ctypes/wintypes.py
+END

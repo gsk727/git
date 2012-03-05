@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk
+END
+tkMessageBox.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/tkMessageBox.py
+END
+tkFileDialog.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/tkFileDialog.py
+END
+Dialog.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/Dialog.py
+END
+FileDialog.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/FileDialog.py
+END
+tkColorChooser.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/tkColorChooser.py
+END
+ttk.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/ttk.py
+END
+Tix.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/Tix.py
+END
+Tkdnd.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/Tkdnd.py
+END
+tkFont.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/tkFont.py
+END
+tkCommonDialog.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/tkCommonDialog.py
+END
+tkSimpleDialog.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/tkSimpleDialog.py
+END
+SimpleDialog.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/SimpleDialog.py
+END
+Tkconstants.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/Tkconstants.py
+END
+Canvas.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/Canvas.py
+END
+ScrolledText.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/ScrolledText.py
+END
+turtle.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/turtle.py
+END
+Tkinter.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/Tkinter.py
+END
+FixTk.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/28/trunk/server/pylibs/Lib/lib-tk/FixTk.py
+END
