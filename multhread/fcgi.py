@@ -1,5 +1,4 @@
 # encoding: utf-8
- 
 from app import app
 from flup.server.fcgi import WSGIServer
  
