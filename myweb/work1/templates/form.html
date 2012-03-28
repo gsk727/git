@@ -1,0 +1,33 @@
+{% macro input(name, id, class="span4", value="", type="text") -%}
+    <input id= "{{ id }}" class="{{ class }}" type="{{ type }}" value="{{ value|e }}" name="{{ name }}">
+{%- endmacro %}
+
+{% macro button(id, value="", class="btn btn-primary", type="button") -%}
+     <button class="{{ class }}" type="{{ type }}" id="{{ id }}">{{ value }}</button>
+{%- endmacro %}
+
+{% macro myForm(id="", url="", btnID="", btnName="") -%}
+	<form action="{{ url_for(url) }}"  method="post" id="{{ id }}">
+		{% for tInfo in tableMap %}
+		    {% if tInfo.0 == "base" %}
+		        <label> 基地 </label>
+		        <div class="controls">
+		            <select id="{{ tInfo.0 }}" name="{{ tInfo.0 }}">
+		            </select>
+		        </div>
+		    {% elif tInfo.0 == "airline" %}
+		       <label> 航班 </label>
+                <div class="controls">
+                    <select id="{{ tInfo.0 }}" name="{{ tInfo.0 }}">
+                    </select>
+                </div>
+		    {% else %}
+		        <label> {{ tInfo.1 }} </label>
+		        {{ input(name = tInfo.0, id=tInfo.0) }}
+		    {% endif %}
+		{% endfor %}
+		   <div class="form-action">
+		      {{ button(btnID, btnName) }}
+		   </div>
+	</form>
+{%- endmacro %}

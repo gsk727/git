@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block header %}
+    <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link type="text/css" href="../static/css/device.css" rel="stylesheet"> <link type="text/css" href="../static/css/bootstrap-responsive.css" rel="stylesheet"> <link href="../static/css/docs.css" rel="stylesheet">
+    <link href="../static/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <link href="../static/css/jquery-ui-1.8.18.custom.css" rel="stylesheet">
+    <script src="../static/js/jquery-1.7.1.min.js"> </script>
+    <script src="../static/js/jquery-ui-1.8.18.custom.min.js"> </script>
+   <script src="../static/js/jquery.ui.core.js"> </script> 
+    <script src="../static/js/jquery.ui.datepicker.js"> </script>
+{% endblock %}
+
+{% block body %}
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#1" data-toggle="tab">查看</a></li>
+            <li><a href="#2" data-toggle="tab" id="addTab">添加</a></li>
+            <li><a href="#3" data-toggle="tab" id="updateTab">更新</a></li>
+        </ul> 
+        <div class="tab-content">
+            <div class="tab-pane active" id="1">
+                    <form action="{{ url_for(updateURL) }}"  method="post" id="frmUpdate">
+                        {% for tInfo in tableMap %}
+                            {% if tInfo.0 == "base" %}
+                                <label> 基地 </label>
+                                <div class="controls">
+                                    <select id="{{ tInfo.0 }}" name="{{ tInfo.0 }}">
+                                    </select>
+                                </div>
+                            {% else %}
+                                <label> {{ tInfo.1 }} </label>
+                                <input class="span4" name="{{ tInfo.0 }}" id="{{ tInfo.0 }}" />
+                            {% endif %}
+                        {% endfor %}
+                            <div class="form-action">
+                                <button class="btn btn-primary" type="button" id="updateBtnOK">确定更新</button>
+                            </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <script src="../static/js/bootstrap-transition.js"></script>
+    <script src="../static/js/bootstrap-alert.js"></script>
+    <script src="../static/js/bootstrap-modal.js"></script>
+    <script src="../static/js/bootstrap-dropdown.js"></script>
+    <script src="../static/js/bootstrap-scrollspy.js"></script>
+    <script src="../static/js/bootstrap-tab.js"></script>
+    <script src="../static/js/bootstrap-tooltip.js"></script>
+    <script src="../static/js/bootstrap-popover.js"></script>
+    <script src="../static/js/bootstrap-button.js"></script>
+    <script src="../static/js/bootstrap-collapse.js"></script>
+    <script src="../static/js/bootstrap-carousel.js"></script>
+    <script src="../static/js/bootstrap-typeahead.js"></script>
+    <script src="../static/js/base.js"> </script> 
+{% endblock %}

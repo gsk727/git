@@ -1,0 +1,20 @@
+#Tue Mar 27 11:26:32 CST 2012
+eclipse.preferences.version=1
+encoding//mode/base.py=utf-8
+encoding//mode/device.py=utf-8
+encoding//mode/mode.py=utf-8
+encoding//mode/stuff.py=utf-8
+encoding//mode/testMode.py=utf-8
+encoding//views/air.py=utf-8
+encoding//views/airline.py=utf-8
+encoding//views/appview.py=utf-8
+encoding//views/base.py=utf-8
+encoding//views/baseblueprint.py=utf-8
+encoding//views/content.py=utf-8
+encoding//views/device.py=utf-8
+encoding//views/task.py=utf-8
+encoding//views/user.py=utf-8
+encoding/dbdata.py=utf-8
+encoding/main.py=utf-8
+encoding/mulprocess.py=utf-8
+encoding/util.py=utf-8
