@@ -2,7 +2,7 @@ $("#loginBtn").bind("click", function(){
         var name = $.trim($("#username").val());
         var pwd = $.trim($("#password").val());
         var ct = $.trim($("#csrf_token").val());
- 
+        
         if (name.length==0  && pwd.length==0)
         {
             alert("用xxx为空");
@@ -21,7 +21,9 @@ $("#loginBtn").bind("click", function(){
                     alert(data.message);  
                 }
                 else{
-                    $("#loginform").submit();
+                    document.cookie = 'username'+"=" + escape(name);
+                    window.location.href="/user/"+name;
+                    //$.ajax.get("/user/"+name);
                 }
            }
         });

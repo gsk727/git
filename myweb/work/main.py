@@ -14,8 +14,8 @@ from views import contentView
 
 
 app = Flask(__name__)
-app.register_blueprint(deviceView)
 app.register_blueprint(userView)
+app.register_blueprint(deviceView)
 app.register_blueprint(adminView)
 app.register_blueprint(airView)
 app.register_blueprint(stuffView)

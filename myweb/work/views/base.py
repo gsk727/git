@@ -18,14 +18,78 @@ baseView = Blueprint("base", __name__, url_prefix="/base")
 db = getDB("app")
 
 
-#@baseView.before_request
-#@app_verifyUser
-#def base_beforeRequest():
-#    """
-#    完成用户授权的检测，根据需要return
-#    """
-#    pass
-#    print "11111111111111!!!!!!"
+@baseView.before_request
+@app_verifyUser
+def base_beforeRequest():
+    """
+    完成用户授权的检测，根据需要return
+    """
+    print "11111111111111!!!!!!"
+
+
+@baseView.route("/")
+def get_all():
+    data = db.base.find({}, {"_id": 0})
+    return render_template(
+                    "showTable.html",
+                    addURL="base.add",
+                    updateURL="base.update",
+                    data=data,
+                    tableMap=baseMap,
+                    checkType="base"
+                )
+ 
+
+@baseView.route("/<base>")
+def get(base):
+    """
+    get用户信息的显示, 基地有多个实体
+    """
+    # 用户获取所有基地的name, 用户ajax的请求
+    dataType = request.args.get("dataType", None)
+    if dataType == "json":
+        return jsonify(message=[x.strip() for x in db.base.distinct("name")])
+
+    # 正常的请求处理
+    if base is not None:
+        regx = re.compile(base, re.IGNORECASE)
+        data = db.base.find({"name": regx})
+    else:
+        data = db.base.find({}, {"_id": 0})
+    return render_template(
+                    "showTable.html",
+                    addURL="base.add",
+                    updateURL="base.update",
+                    data=data,
+                    tableMap=baseMap,
+                    checkType="base"
+                )
+
+
+@baseView.route("/<base>/<entity>", methods=["GET", ])
+def get_entities(base, entity):
+    """
+    获取某基地下所有的实体信息
+    url:
+    """
+    regx = re.compile(base, re.IGNORECASE)
+    data = None
+    if entity == "stuff":
+        data = db.user.find({"base": regx}, {"_id": 0, "password": 0})
+    elif entity == "device":
+        data = db.device.find({"base": regx}, {"_id": 0}) 
+
+    if data is not None: 
+        addURL=".".join((entity, "add"))
+        updateURL = ".".join((entity, "update"))
+        return render_template("showTable.html",
+                        data=data,
+                        tableMap=stuffMap,
+                        addURL=addURL,
+                        updateURL=updateURL,
+                        checkType=entity,
+            )
+    return ""
 
 
 @baseView.route("/<base>/<entity>/<name>")
@@ -53,68 +117,6 @@ def get_entity(base, entity, name):
             )
     
     return ""
-
-@baseView.route("/<base>/<entity>", methods=["GET", ])
-def get_entities(base, entity):
-    """
-    获取某基地下所有的实体信息
-    url:
-    """
-    regx = re.compile(base, re.IGNORECASE)
-    data = None
-    if entity == "stuff":
-        data = db.user.find({"base": regx}, {"_id": 0, "password": 0})
-    elif entity == "device":
-        data = db.device.find({"base": regx}, {"_id": 0}) 
-
-    if data is not None: 
-        addURL=".".join((entity, "add"))
-        updateURL = ".".join((entity, "update"))
-        return render_template("showTable.html",
-                        data=data,
-                        tableMap=stuffMap,
-                        addURL=addURL,
-                        updateURL=updateURL,
-                        checkType=entity,
-            )
-    return ""
-
-@baseView.route("/")
-def get_all():
-    data = db.base.find({}, {"_id": 0})
-    return render_template(
-                    "showTable.html",
-                    addURL="base.add",
-                    updateURL="base.update",
-                    data=data,
-                    tableMap=baseMap,
-                    checkType="base"
-                )
- 
-@baseView.route("/<base>")
-def get(base):
-    """
-    get用户信息的显示, 基地有多个实体
-    """
-    # 用户获取所有基地的name, 用户ajax的请求
-    dataType = request.args.get("dataType", None)
-    if dataType == "json":
-        return jsonify(message=[x.strip() for x in db.base.distinct("name")])
-
-    # 正常的请求处理
-    if base is not None:
-        regx = re.compile(base, re.IGNORECASE)
-        data = db.base.find({"name": regx})
-    else:
-        data = db.base.find({}, {"_id": 0})
-    return render_template(
-                    "showTable.html",
-                    addURL="base.add",
-                    updateURL="base.update",
-                    data=data,
-                    tableMap=baseMap,
-                    checkType="base"
-                )
 
 
 @baseView.route("/", methods=["POST", ])

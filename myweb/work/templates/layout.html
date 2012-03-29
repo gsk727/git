@@ -33,9 +33,6 @@
 
 
 <body>
-    {% block content %}
-    {% endblock %}
-
 	{% block body %}
 		<div class="navbar navbar-fixed-top">
 	        <div class="navbar-inner">
@@ -63,6 +60,11 @@
 	        </div>
 	    </div>
 	{% endblock %}
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
 </body>
 
 {% block footer %}
