@@ -63,11 +63,11 @@ def update():
     taskID = request.form.get("taskID", "").strip()
     status = request.form.get("status", "").strip()
 
-    regx = re.compile(stuffID, re.IGNORECASE)
+    regx = re.compile("^%s$"%(stuffID, ), re.IGNORECASE)
     if not db.user.find_one({"stuffID": regx}):
         return jsonify(message=u"不存在的员工")
 
-    regx = re.compile(base, re.IGNORECASE)
+    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
     if not db.base.find_one({"base": regx}):
         return jsonify(message=u"不存在的基地")
 
@@ -105,12 +105,12 @@ def add():
     # taskID = request.form.get("taskID", "").strip()
 
     status = "free"
-    regx = re.compile(base, re.IGNORECASE)
+    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
     if not db.base.find_one({"name": regx}):
         return jsonify(message=u"不存在的基地")
 
     if len(stuffID) != 0:   # 添加任务立即分配
-        regx = re.compile(stuffID, re.IGNORECASE)
+        regx = re.compile("^"+stuffID+"$", re.IGNORECASE)
         if not db.user.find_one({"name": regx}):
             return jsonify(message=u"不存在的员工")
         else:

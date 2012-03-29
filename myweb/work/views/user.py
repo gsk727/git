@@ -10,8 +10,7 @@ from flask import Blueprint
 from flask import url_for, redirect, render_template, request, session,  g,  render_template_string
 
 from common import getDB
-
-from forms import LoginForm
+from forms.account import LoginForm, EditPasswordForm
 
 db = getDB("app")
 userView = Blueprint("user", __name__, url_prefix="/user", 
@@ -25,14 +24,49 @@ def show_self():
     自己查看自己的信息，需要验证用户名和密码 
     """
     name = session.get("name", None)
-    print name
     res = db.user.find_one({"name": name},  {"_id": 0})
-    print res
+    # 测试的用户显示，这一部分内容会被丢到一个div显示
+    return render_template_string(
+                                "{% import 'user_macro.html' as user %}\
+                                    {{ user.user_self_show(res) }}\
+                                ",
+                                  res = res
+                                  )
     return render_template_string(u"<lable> 用户名字 </lable> <h1> %s </h1> <label> 权限 </lable> <h1> %s</h1>\
                                     <br><br><br><br>11111"
                                   %(res["name"], res["power"]))
+
+
+@userView.route("/editpassword", methods=["GET", "POST"])
+def user_edit_password():
+    form = EditPasswordForm()
+    if form.validate_on_submit():
+        username = session["name"]
+        op = form.originPassword.data
+        print username, ",,,,,,,,,,,,,,,,,,,,,,"
+        if not db.user.find_and_modify(query = {"name": username, "password": binary.Binary(md5.md5(op).digest())},
+                                       update={"$set": {"password": binary.Binary(md5.md5(form.newPassword.data).digest())}}, 
+                                       ):
+            return u"密码错误， 就是不对"
+        else:
+            return u"修改成功, 自己回去吧"
     
-@userView.route("/", methods=["GET", "POST"])
+        
+    return render_template_string("{% from 'form.html' import render_errors %}\
+        <form method='post' action={{ url_for('user.user_edit_password') }} >\
+        {{ form.hidden_tag() }} \
+        {{ form.originPassword.label }}\
+        {{ form.originPassword }} {{ render_errors(form.originPassword) }} <br>\
+        {{ form.newPassword.label }}\
+        {{ form.newPassword }} {{ render_errors(form.newPassword) }}<br>\
+        {{ form.rePassword.label }}\
+        {{ form.rePassword }} {{ render_errors(form.rePassword) }} <br>\
+        {{ form.submit }} \
+        </form>\
+    ",
+    form=form)
+    
+@userView.route("/",  methods=["GET", "POST"])
 def get():
     """返回登录界面
     """
@@ -48,12 +82,10 @@ def get():
 
         if userInfo is None:
             return jsonify(message=u"用户名字或密码错误")  # 应该返回错误编码不是直接的文字
-        if userInfo.get("power", None) == None:
-            return jsonify(message=u"你的没有权限")
 
         session["logined"] = True
         session["name"] = userInfo["name"]
-        print userInfo 
+
         # g.power = userInfo["power"]
         return jsonify(message="ok")
         #return redirect(url_for("user.show", name=form.username.data))
@@ -61,20 +93,20 @@ def get():
     return render_template("login.html", form=form)
 
 
-@userView.route("/<name>", methods=["GET", ])
-def show(name):
-    print "show", name
-    userInfo = db.user.find_one({"name": name}, {"id":0})
-    print userInfo
-    #return jsonify(message="hello world")
-    return render_template("show.html", userInfo=userInfo)
-
-
 @userView.route("/logout", methods=["GET",])
 def logout():
     if "name" in session:
         session.pop("name")
     return redirect(url_for("index"))
+
+
+@userView.route("/<name>", methods=["GET", ])
+def show(name):
+    userInfo = db.user.find_one({"name": name}, {"id":0})
+    print userInfo
+    #return jsonify(message="hello world")
+    return render_template("show.html", userInfo=userInfo)
+
 
 @userView.route("/", methods=["POST", ])
 def login_post():

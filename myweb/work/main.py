@@ -11,7 +11,7 @@ import common
 from views import stuffView
 from views import taskView, airlineView
 from views import contentView
-
+from flaskext.babel import Babel
 
 app = Flask(__name__)
 app.register_blueprint(userView)
@@ -24,13 +24,13 @@ app.register_blueprint(taskView)
 app.register_blueprint(airlineView)
 app.register_blueprint(contentView)
 
+babel = Babel(app)
 
 db = common.getDB("app")
 
 
 @app.errorhandler(405)
 def method_not_allowed(error):
-    print "405------------------"
     rs = []
     for r in app.url_map.iter_rules():
         ts = str(r).replace("<", "&lt").replace(">", "&gt")
@@ -43,7 +43,6 @@ def method_not_allowed(error):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    print "404", 000000000000000000000000
     return render_template('404.html')
 
 
@@ -73,7 +72,7 @@ def frame():
 
 @app.route("/")
 def index():
-    return redirect(url_for("base.get_all"))
+    return redirect(url_for("user.get"))
 
 
 app.route("/test/test", endpoint="123", redirect_to='/')(None)

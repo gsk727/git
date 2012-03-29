@@ -1,5 +1,7 @@
-#Tue Mar 27 11:26:32 CST 2012
+#Thu Mar 29 17:05:29 CST 2012
 eclipse.preferences.version=1
+encoding//forms/account.py=utf-8
+encoding//forms/base.py=utf-8
 encoding//mode/base.py=utf-8
 encoding//mode/device.py=utf-8
 encoding//mode/mode.py=utf-8
@@ -12,6 +14,7 @@ encoding//views/base.py=utf-8
 encoding//views/baseblueprint.py=utf-8
 encoding//views/content.py=utf-8
 encoding//views/device.py=utf-8
+encoding//views/stuff.py=utf-8
 encoding//views/task.py=utf-8
 encoding//views/user.py=utf-8
 encoding/dbdata.py=utf-8

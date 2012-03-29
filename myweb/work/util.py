@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+# -*- coding: utf-8  -*-
 """
 工具模块
 """
@@ -29,37 +29,40 @@ def synchronize(method):
     return update_wrapper(Angry, method)
 
 
-def app_verifyUser(method):
+def app_verifyUser(**options):
     """
     凑合着用吧。验证用户session
     现在用户的ID， 同时也为Session ID
+    我靠，猥琐的一个函数
     """
-    def default(*args, **kwargs):
-        print "-----------------------"
+    fun = []                    # 我靠
+    def wrapper(method):
+        # fun = method # 这样的fun属于wrapper函数而不是app的变量
+        fun.append(method)
+        return update_wrapper(default, method)
+
+    def default(**moptions):
         name = session.get("name")
         if name is None:
             return redirect(url_for("user.get"))
-            # return render_template("login.html")
-
         userInfo = db.user.find_one({"name": name})
         if not userInfo:
             return redirect(url_for("user.get"))
-            # return render_template("login.html")
 
+        if options.get("power", False) and not userInfo.get("power", None):
+                return jsonify(message=u"你的没有权限")
         name, pwd = userInfo["name"], userInfo["password"]
-        #if session_key != md5.md5(name + pwd).digest():
-        #    return render_template("login.html")
         g.user = name
         flash(u"欢迎回来")
         g.logined = True
-        return method(*args, **kwargs)     # 可以提前返回
-        # return render_template("index.html")
-    return update_wrapper(default, method)
+        fun[0](**moptions)     # 可以提前返回
+
+    return wrapper
 
 
 def release_mode(threadRef, name, tid):
     """
-    线程是否后，ident 将被回收利用
+    线程“没有”后，ident 将被回收利用
     """
     global __twRef
     if tid in _twRef:

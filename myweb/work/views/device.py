@@ -14,7 +14,7 @@ db = getDB("app")
 
 
 @deviceView.before_request
-@app_verifyUser     # 不允许匿名访问
+@app_verifyUser(power = False)     # 不允许匿名访问
 def device_beforeRequest(*args, **kwargs):
     """return会导致后面的route无法调用, nodejs的next() 是个好东西啊
     """

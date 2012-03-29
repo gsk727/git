@@ -1,0 +1,24 @@
+<!--
+            {% if tInfo == "base" %}
+                <label> d[tInfo].lable </label>
+                <div class="controls">
+                    <select id="{{ tInfo.0 }}" name="{{ tInfo.0 }}">
+                    </select>
+                </div>
+            {% elif tInfo == "airline" %}
+               <label> 航班 </label>
+                <div class="controls">
+                    <select id="{{ tInfo }}" name="{{ tInfo }}">
+                    </select>
+                </div>
+            {% else %}
+                <label> {{ form.tInfo.lable }} </label>
+                {{ input(name = tInfo.0, id=tInfo.0) }}
+            {% endif %}
+        {% endfor %}
+           <div class="form-action">
+              {{ button(btnID, btnName) }}
+            
+           </div>
+    </form>
+      -->

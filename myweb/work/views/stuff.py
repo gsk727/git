@@ -7,6 +7,7 @@
 /stuff/add ：添加员工
 
 """
+from bson import binary 
 from flask import Blueprint, request
 from flask import jsonify, render_template
 import re
@@ -28,11 +29,10 @@ def get(name):
         职员和用户，管理员都被看成是用户
     """
     name = name or g.user
-    print name
     if not name or len(name) == 0:
         return redirect(url_for("base.get"))
 
-    regx = re.compile(name, re.IGNORECASE)
+    regx = re.compile("^"+name+"$", re.IGNORECASE)
     data = db.user.find({"name": regx}, {"_id": 0, "password": 0})
     return render_template("showTable.html",
                         data=data,
@@ -62,18 +62,16 @@ def add():
     sm = getMode(StuffMode)
     for k, _ in stuffMap:
         sm[k] = request.form.get(k, "").strip()
-    
+
     if sm["status"] is None:  # or status > 1111:
         sm["status"] = "1-在职"   # s
-    
+
     base = sm["base"]
     if base is None or not db.base.find({"name": base}):
         return jsonify(smessage=u"不存在的基地")
-   
-    print sm["begin"] 
-    name, role, begin, end = sm["name"], sm["role"], sm["begin"], sm["end"]
-    print name, role, begin,end
 
+    name, role, begin, end = sm["name"], sm["role"], sm["begin"], sm["end"]
+    m.password = binary.Binary(md5.dm5("123456").digest())
     if name is None or len(name) == 0:
         return jsonify(message=u"留下名字")
     elif role is None or len(role) == 0:
@@ -95,7 +93,7 @@ def add():
         # web请求的这个处理, 耐人寻味的dd:
         # 如果返回错误码，客户端先获取错误码对应的内容，如果没有错误
         # 那就白传了这个错误文字，不如直接返回错误字符串
-        msg = u"已经不存在的基地不能添加" 
+        msg = u"已经不存在的基地不能添加"
 
 
     return jsonify(message=msg)

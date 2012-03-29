@@ -12,50 +12,90 @@ from util import *
 from mode.base import baseMap
 from mode import BaseMode       # 每个线程一个
 from mode.stuff import stuffMap
-
+from forms import base
 
 baseView = Blueprint("base", __name__, url_prefix="/base")
 db = getDB("app")
 
 
 @baseView.before_request
-@app_verifyUser
+@app_verifyUser(power = False)
 def base_beforeRequest():
     """
     完成用户授权的检测，根据需要return
     """
-    print "11111111111111!!!!!!"
+    pass
 
 
 @baseView.route("/")
 def get_all():
     data = db.base.find({}, {"_id": 0})
-    return render_template(
-                    "showTable.html",
-                    addURL="base.add",
-                    updateURL="base.update",
-                    data=data,
-                    tableMap=baseMap,
-                    checkType="base"
-                )
- 
-
-@baseView.route("/<base>")
-def get(base):
-    """
-    get用户信息的显示, 基地有多个实体
-    """
-    # 用户获取所有基地的name, 用户ajax的请求
     dataType = request.args.get("dataType", None)
     if dataType == "json":
         return jsonify(message=[x.strip() for x in db.base.distinct("name")])
 
+    updateFrm = base.BaseUpdateForm()
+    addFrm = base.BaseAddForm()
+    return render_template(
+                    "base.html",
+                    addURL="base.add",
+                    updateURL="base.update",
+                    data=data,
+                   updateForm = updateFrm,
+                   addForm = addFrm, 
+                    #tableMap=baseMap,
+                    
+                    checkType="base"
+                )
+
+@baseView.route("/add", methods=["POST", ])
+@synchronize
+def add():
+    """信息的添加
+       锁线程太暴力了。getMode thread_local data
+       另外一个方法有木有?
+    """
+    print "======================add "
+    addFrm = base.BaseAddForm()
+   
+    if addFrm.validate_on_submit():
+        print "------------------------------ addFrm"
+    data = {}
+    updateFrm = base.BaseUpdateForm()
+    return render_template(
+                    "base.html",
+                    addURL="base.add",
+                    updateURL="base.update",
+                    data=data,
+                   updateForm = updateFrm,
+                   addForm = addFrm, 
+                    #tableMap=baseMap,
+                    checkType="base"
+                )
+    print addFrm.name.data, addFrm.city.data
+   # base_mode = getMode(BaseMode)
+    #base_mode.name = request.form["name"]
+    #base_mode.des = request.form["des"]
+   # err = base_mode.insert()                     # 这是一个怪异的操作
+   # msg = "ok"
+    #if err == "EXIST":
+        # web请求的这个处理, 耐人寻味的dd:
+        # 如果返回错误码，客户端先获取错误码对应的内容，如果没有错误
+        # 那就白传了这个错误文字，不如直接返回错误字符串
+      #  msg = u"已经不存在的基地不能添加"
+
+    # time.sleep(10)
+    # return jsonify(message=msg)
+    return "hello"
+
+@baseView.route("/<base>")
+def get(base):
+    """
+    get用户信息的显示, 基地有多个实体, 如果<base> 
+    """
     # 正常的请求处理
-    if base is not None:
-        regx = re.compile(base, re.IGNORECASE)
-        data = db.base.find({"name": regx})
-    else:
-        data = db.base.find({}, {"_id": 0})
+    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
+    data = db.base.find({"name": regx})
     return render_template(
                     "showTable.html",
                     addURL="base.add",
@@ -72,7 +112,8 @@ def get_entities(base, entity):
     获取某基地下所有的实体信息
     url:
     """
-    regx = re.compile(base, re.IGNORECASE)
+    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
+    # regx = re.compile(base, re.IGNORECASE)
     data = None
     if entity == "stuff":
         data = db.user.find({"base": regx}, {"_id": 0, "password": 0})
@@ -89,21 +130,21 @@ def get_entities(base, entity):
                         updateURL=updateURL,
                         checkType=entity,
             )
-    return ""
+    return abort(404)
 
 
 @baseView.route("/<base>/<entity>/<name>")
 def get_entity(base, entity, name):
     """
     查看制定entity的信息
-    """
-    print base, entity, name
-    regx = re.compile(base, re.IGNORECASE)
+    """ 
+    bregx = re.compile("^%s$"%(base, ), re.IGNORECASE)
+    nregx = re.compile("^" + name + "$", re.IGNORECASE) 
     data = None
     if entity == "stuff":
-        data = db.user.find({"base": regx}, {"_id": 0, "password": 0})
+        data = db.user.find({"base": bregx, "name": nregx}, {"_id": 0, "password": 0})
     elif entity == "device":
-        data = db.device.find({"base": regx, "name": name}, {"_id": 0}) 
+        data = db.device.find({"base": bregx, "name": nregx}, {"_id": 0}) 
     
     if data is not None: 
         addURL=".".join((entity, "add"))
@@ -116,8 +157,8 @@ def get_entity(base, entity, name):
                         checkType=entity,
             )
     
-    return ""
-
+    return abort(404)
+ 
 
 @baseView.route("/", methods=["POST", ])
 def update():
@@ -156,26 +197,7 @@ def update():
     return jsonify(message=error)           # str(objectID) hex
 
 
-@baseView.route("/add", methods=["POST", ])
-@synchronize
-def add():
-    """信息的添加
-       锁线程太暴力了。getMode thread_local data
-       另外一个方法有mo有?
-    """
-    base_mode = getMode(BaseMode)
-    base_mode.name = request.form["name"]
-    base_mode.des = request.form["des"]
-    err = base_mode.insert()                     # 这是一个怪异的操作
-    msg = "ok"
-    if err == "EXIST":
-        # web请求的这个处理, 耐人寻味的dd:
-        # 如果返回错误码，客户端先获取错误码对应的内容，如果没有错误
-        # 那就白传了这个错误文字，不如直接返回错误字符串
-        msg = u"已经不存在的基地不能添加"
 
-    # time.sleep(10)
-    return jsonify(message=msg)
 
 
 #========================================================
