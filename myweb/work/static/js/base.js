@@ -7,6 +7,20 @@ var checkMap={
     "content":checkContent,
 };
 
+var options = {
+     // target:         '#htmlExampleTarget',    // target element(s) to be updated with server response
+     beforeSubmit:   showRequest,   // pre-submit callback 表单提交前被调用的回调函数
+     success:        showResponse   // post-submit callback   表单提交成功后被调用的回调函数
+     // other available options:
+     //url:        url          // override for form's 'action' attribute
+     //type:       type         // 'get' or 'post', override for form's 'method' attribute
+     //dataType:   null         // 'xml', 'script', or 'json' (expected server response type)
+     //clearForm: true         // clear all form fields after successful submit
+     //resetForm: true         // reset the form after successful submit
+     // $.ajax options can be used here too, for example:
+     //timeout:    3000 
+}
+
 function checkContent(frmName){
     return true;
 }
@@ -18,14 +32,18 @@ function checkDevice(frmName){
     return true;
 };
 
-$("#addBtnOK").bind("click", function(){
-	var cType=$("#checkType").val();
-	cFun = checkMap[cType];
-	if (!cFun("#frmAdd"))
-		return;
+$("#addBtnOK").live("click", function(){
+    var cType=$("#checkType").val();
+    cFun = checkMap[cType];
+    if (!cFun("#frmAdd"))
+        return false;
+    // options.target = "\/base\/add";
+    $("#frmAdd").ajaxForm(options);
+
+    /*
 	var objs = $("#frmAdd input[type!=hidden]");
 	var p = {};
-
+    
 	for(var i=0; i < objs.length; ++i)
 	{
 	   p[objs.eq(i).attr("id")] = objs.eq(i).val();
@@ -43,7 +61,7 @@ $("#addBtnOK").bind("click", function(){
             alert(data.message);
         }
     });
-
+    */
 });
 
 
@@ -87,37 +105,38 @@ function addBaseToSel(data, textStatus, selName) {
 };
 
 $("#addTab").bind("click", function(){
-	 var cType=$("#checkType").val();
-	
-	 switch(cType){
+    var cType=$("#checkType").val();
+    alert(addDivHTML);
+    $("div #2")[0].innerHTML = addDivHTML;
+
+    switch(cType){
         case 'base':
             break;
         case 'device':
-            getBaseNames(addBaseToSel, url="/airline/", {dType:"json"}, "#frmAdd #airline");
+            getBaseNames(addBaseToSel, url="/airline/", {dType: "json"}, "#frmAdd #airline");
         default:
-            getBaseNames(addBaseToSel, "/base/", {dataType:"json"}, "#frmAdd #base")
+            getBaseNames(addBaseToSel, "/base/", {dataType: "json"}, "#frmAdd #base")
 	 };
 });
 
 $("#myTable tbody tr").bind("click", function(){
-    		g_cur_index = $(this).index();
+        g_cur_index = $(this).index();
 });
 
 $("#updateTab").bind("click", function(){
-	if (typeof g_cur_index == "undefined")
-		return ""
-
-	var rObject = $("#myTable tr:nth-child("+(g_cur_index+1)+")");
+    if (typeof g_cur_index == "undefined")
+        return ""
+    var rObject = $("#myTable tr:nth-child("+(g_cur_index+1)+")");
     var inputID, baseIndex;
     for (var i =0;i < $("#frmUpdate input[type!='hidden'], #frmUpdate select").length; ++i){  
         inputID = $("#frmUpdate input:[type!='hidden'],#frmUpdate select").eq(i).attr("id");
         if (inputID == "base") { baseIndex = i; continue; }
 		$("#frmUpdate #"+inputID).attr("value", $.trim(rObject.children("td:eq("+i+")").text()));
     }
-    
-	g_cur_base = $.trim(rObject.children("td:eq("+baseIndex+")").text());
-	if($("#checktype").val() == "device")
-	  g_cur_airline =  $("#myTable tr:nth-child("+(g_cur_index+1)+")").children("td:eq("+i+")").text();
+
+    g_cur_base = $.trim(rObject.children("td:eq("+baseIndex+")").text());
+    if($("#checktype").val() == "device")
+        g_cur_airline =  $("#myTable tr:nth-child("+(g_cur_index+1)+")").children("td:eq("+i+")").text();
 
     var cType=$("#checkType").val();
     switch(cType){
@@ -168,10 +187,46 @@ function checkStuff(frmName){
 	return true;
 };
 
-$("#updateBtnOK").bind("click", function(){	
-	var cType=$("#checkType").val();
-	cFun = checkMap[cType];
-	if (!cFun("#frmUpdate"))
-		return 
-	$("#frmUpdate").submit();
+
+$("#updateBtnOK").bind("click", function(){
+    var cType=$("#checkType").val();
+    cFun = checkMap[cType];
+    if (!cFun("#frmUpdate"))
+        return
+
+    $("#frmUpdate").submit(function(){
+          $(this).ajaxSubmit(options);
+         // !!! Important !!!
+         // always return false to prevent standard browser submit and page navigation
+         return false;
+	});
 });
+
+
+// pre-submit callback
+function showRequest(formData, jqForm, options) {
+     // formData is an array; here we use $.param to convert it to a string to display it
+     // but the form plugin does this for you automatically when it submits the data
+     var queryString = $.param(formData);
+     // jqForm is a jQuery object encapsulating the form element.   To access the
+     // DOM element for the form do this:
+     // var formElement = jqForm[0];
+     alert('About to submit: \n\n' + queryString);
+     // here we could return false to prevent the form from being submitted;
+     // returning anything other than false will allow the form submit to continue
+     return true;
+}
+
+// post-submit callback
+function showResponse(responseText, statusText)   {
+     // for normal html responses, the first argument to the success callback
+     // is the XMLHttpRequest object's responseText property
+     // if the ajaxSubmit method was passed an Options Object with the dataType
+     // property set to 'xml' then the first argument to the success callback
+     // is the XMLHttpRequest object's responseXML property
+     // if the ajaxSubmit method was passed an Options Object with the dataType
+     // property set to 'json' then the first argument to the success callback
+     // is the json data object returned by the server
+     if (statusText == "success")
+        $("#2")[0].innerHTML = responseText;
+}

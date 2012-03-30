@@ -11,7 +11,6 @@ from common import getDB
 from mode import Mode
 from flask import redirect, url_for
 
-
 _g_lock = Lock()
 db = getDB("app")
 _twRef = {}
@@ -53,7 +52,7 @@ def app_verifyUser(**options):
                 return jsonify(message=u"你的没有权限")
         name, pwd = userInfo["name"], userInfo["password"]
         g.user = name
-        flash(u"欢迎回来")
+        # flash(u"欢迎回来", "info")
         g.logined = True
         fun[0](**moptions)     # 可以提前返回
 

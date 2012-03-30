@@ -5,8 +5,8 @@ WSGIServer.__init__(multithreaded=True, multiprocess=False,..)
 Blueprint("base", __name__, url_prefix="/base")
 """
 import re
-from flask import render_template, jsonify
-from flask import Blueprint, request
+from flask import render_template, jsonify, render_template_string, Blueprint, request
+from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB, AppException  # , app_getID
 from util import *
 from mode.base import baseMap
@@ -48,6 +48,7 @@ def get_all():
                     checkType="base"
                 )
 
+
 @baseView.route("/add", methods=["POST", ])
 @synchronize
 def add():
@@ -55,24 +56,30 @@ def add():
        锁线程太暴力了。getMode thread_local data
        另外一个方法有木有?
     """
-    print "======================add "
     addFrm = base.BaseAddForm()
-   
     if addFrm.validate_on_submit():
-        print "------------------------------ addFrm"
-    data = {}
-    updateFrm = base.BaseUpdateForm()
-    return render_template(
-                    "base.html",
-                    addURL="base.add",
-                    updateURL="base.update",
-                    data=data,
-                   updateForm = updateFrm,
-                   addForm = addFrm, 
-                    #tableMap=baseMap,
-                    checkType="base"
-                )
-    print addFrm.name.data, addFrm.city.data
+        for attr in addFrm.showAttributes:
+            db.base.insert(addFrm.asDict())
+        flash(_(u"我靠，终于添加成功了"), "success")   # 第二个参数与html的class相关
+        # return render_template_string(u"<h1>成功</h1>刷新可查看")
+
+    return render_template_string("{% import 'form.html' as forms with context %}\
+         {{ forms.myForm(addForm, addURL) }}", addForm = addFrm, addURL="base.add"
+        )
+
+#    data = {}
+#    updateFrm = base.BaseUpdateForm()
+#    return render_template(
+#                    "base.html",
+#                    addURL="base.add",
+#                    updateURL="base.update",
+#                    data=data,
+#                   updateForm = updateFrm,
+#                   addForm = addFrm, 
+#                    #tableMap=baseMap,
+#                    checkType="base"
+#                )
+
    # base_mode = getMode(BaseMode)
     #base_mode.name = request.form["name"]
     #base_mode.des = request.form["des"]
@@ -86,7 +93,7 @@ def add():
 
     # time.sleep(10)
     # return jsonify(message=msg)
-    return "hello"
+
 
 @baseView.route("/<base>")
 def get(base):

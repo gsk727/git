@@ -8,8 +8,13 @@
      <button class="{{ class }}" type="{{ type }}" id="{{ id }}">{{ value }}</button>
 {%- endmacro %}
 
-{% macro myForm(form, url, id)  -%}
-	<form action="{{ url_for(url) }}"  method="POST" id="{{ id }}">
+{% macro myForm(form, url)  -%}
+    <div id="flashed">
+            {% for category, msg in get_flashed_messages(with_categories=true) %}
+                <span class="alert alert-{{ category }}">{{ msg }}</span>
+            {% endfor %}
+    </div>
+	<form action="{{ url_for(url) }}" method="POST" id="{{ form.myID }}">
 	    {{ form.hidden_tag() }}
         {% for tInfo in form.showAttributes %}
             {{ form[tInfo].label }}
@@ -17,7 +22,8 @@
         {% endfor %}
 
         <div class="form-action">
-            {{ form.submit }}
+            {{ form.submit() }}
         </div>
     </form>
+    
  {%- endmacro %}
