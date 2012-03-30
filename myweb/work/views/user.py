@@ -52,7 +52,7 @@ def user_edit_password():
             return u"修改成功, 自己回去吧"
     
         
-    return render_template_string("{% from 'form.html' import render_errors %}\
+    return render_template_string("{% from 'form_macro.html' import render_errors %}\
         <form method='post' action={{ url_for('user.user_edit_password') }} >\
         {{ form.hidden_tag() }} \
         {{ form.originPassword.label }}\

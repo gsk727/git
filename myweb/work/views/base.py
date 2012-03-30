@@ -44,7 +44,6 @@ def get_all():
                    updateForm = updateFrm,
                    addForm = addFrm, 
                     #tableMap=baseMap,
-                    
                     checkType="base"
                 )
 
@@ -56,15 +55,22 @@ def add():
        锁线程太暴力了。getMode thread_local data
        另外一个方法有木有?
     """
+    print "---------------------------------------------, 111111111111111111111111"
     addFrm = base.BaseAddForm()
     if addFrm.validate_on_submit():
-        for attr in addFrm.showAttributes:
-            db.base.insert(addFrm.asDict())
+        db.base.insert(addFrm.asDict())
         flash(_(u"我靠，终于添加成功了"), "success")   # 第二个参数与html的class相关
-        # return render_template_string(u"<h1>成功</h1>刷新可查看")
+
 
     return render_template_string("{% import 'form.html' as forms with context %}\
-         {{ forms.myForm(addForm, addURL) }}", addForm = addFrm, addURL="base.add"
+                <div id='flashed'>\
+                        <ul>\
+                        {% for category, msg in get_flashed_messages(with_categories=true) %}\
+                            <li class='alert alert-{{ category }}'> {{ msg }}</li>\
+                        {% endfor %}\
+                        </ul>\
+                </div>\
+                 <div class='span4'>{{ forms.myForm(addForm, addURL) }}</div>", addForm=addFrm, addURL="base.add"
         )
 
 #    data = {}
@@ -178,33 +184,37 @@ def update():
       的实现，暂时还不知道怎么使用或移至
     """
     # name = request.form["name"] 如果不存在key(name)将导致 400 Bad Request
-    base_mode = getMode(BaseMode)
+    print "111111111111111111111111111"
+    updateFrm = base.BaseUpdateForm()
+    if updateFrm.validate_on_submit():
+        base_mode = getMode(BaseMode)
+        base_mode.clear()                             # 一直存在的实例.数据需要清理, cache
+        base_mode.doc.update(updateFrm.asDict())
+        base_mode.updateQuery.update({"name": base_mode.name})
+        ret = base_mode.update(upsert=False, safe=True)
 
-    base_mode.clear()                             # 一直存在的实例.数据需要清理, cache
-    base_mode.name = request.form.get("name")     # 注意此值不允许空
-    base_mode.des = request.form.get("des")
-    error = None
-    if len(base_mode.name) == 0:
-        error = u"名字为空"
-    if error:
-        return jsonify(message=error)
+        if ret["n"] == 0:
+            error = u"不存在的记录"
+            # flash(_(u"不存在的记录"), error)
+        elif ret["err"]:
+            error = str(ret["err"])
+        elif ret["updatedExisting"]:            # 这是更新
+            error = "update success"
+        else:
+            error = "insert success"
+        print "2222222222222222222222222222"
+        flash(_(u"%s"%(error, )), "error")
 
-    base_mode.updateQuery.update({"name": base_mode.name})
-    ret = base_mode.update(upsert=False, safe=True)
-
-    if ret["n"] == 0:
-        error = u"不存在的记录"
-    elif ret["err"]:
-        error = str(ret["err"])
-    elif ret["updatedExisting"]:            # 这是更新
-        error = "update sucess"
-    else:
-        error = "insert sucess"
-
-    return jsonify(message=error)           # str(objectID) hex
-
-
-
+    return render_template_string("{% import 'form.html' as forms with context %}\
+                <div id='flashed'>\
+                        <ul>\
+                        {% for category, msg in get_flashed_messages(with_categories=true) %}\
+                            <li class='alert alert-{{ category }}'> {{ msg }}</li>\
+                        {% endfor %}\
+                        </ul>\
+                </div>\
+                 <div class='span4'>{{ forms.myForm(updateForm, updateURL) }}</div>", updateForm=updateFrm, updateURL="base.update"
+        )
 
 
 #========================================================

@@ -25,9 +25,7 @@ class BaseForm(Form):
             raise ValidationError,  gettext(u"这个可以不重复的，在该一该吧！")
 
     def validate_name(self, field):
-        print field.data
         res =  db.base.find_one({"name": field.data })
-        print "res:", res
         if res is not None:
             raise ValidationError,  gettext(u"这个可以不重复的，在该一该吧！")
 
@@ -53,13 +51,28 @@ class BaseUpdateForm(BaseForm):
     myID = "frmUpdate"
 
     def __init__(self):
-        Form.__init__(self, id="frmUpdate")
-        # super(BaseUpdateForm, self).__init__(id ="frmUpdate")
+        # Form.__init__(self, id="frmUpdate")
+        super(BaseUpdateForm, self).__init__()
+
+    def validate_number(self,  field):
+        """
+        验证唯一性
+        """
+        res =  db.base.find_one({"no": field.data })
+        if res is not None > 0:
+            raise ValidationError,  gettext(u"这个可以不重复的，在该一该吧！")
+
+    def validate_name(self, field):
+        res =  db.base.find_one({"name": field.data })
+        if res is not None:
+            raise ValidationError,  gettext(u"这个可以不重复的，在该一该吧！")
+
 
 class BaseAddForm(BaseForm):
     showAttributes = ["number", "name", "city"]
-    button  =  SubmitField(_(u"提交"))
-    submit =  lambda this, **x: this.button(id="addBtnOK", **x)
+    button  = SubmitField(_(u"添加"))
+    submit = lambda this, **x: this.button(id="addBtnOK", **x)
     myID = "frmAdd"
     def __init__(self):
         super(BaseAddForm, self).__init__(id ="frmAdd")
+
