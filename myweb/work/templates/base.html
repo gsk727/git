@@ -3,8 +3,6 @@
 {% block titlePre %} base {% endblock %}
 {% block head %}
     {{ super() }}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
 {% endblock %}
 
 {% block script %}
@@ -68,6 +66,7 @@
             {% endif %}
 
             <div class="tab-pane" id="3">
+                <div id="notify">  </div>
                 {{ forms.myForm(updateForm, updateURL) }}
             </div>
         </div><!--tab-content -->

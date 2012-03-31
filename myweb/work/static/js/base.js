@@ -132,18 +132,22 @@ $("#updateTab").bind("click", function() {
     current_clicked = "update";
     if( typeof g_cur_index == "undefined")
         return false;
-    var rObject = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")");
+    g_current_selected = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")");
     var inputID, baseIndex;
-    var inputs = $("#frmUpdate input[type!='hidden'][type!='submit'], #frmUpdate select");
+    var inputs = $("#frmUpdate >input, #frmUpdate select");
     for(var i = 0; i < inputs.length; ++i) {
         inputID =inputs.eq(i).attr("id");
         if(inputID == "base") {
             baseIndex = i;
             continue;
         }
-        $("#frmUpdate #" + inputID).attr("value", $.trim(rObject.children("td:eq(" + i + ")").text()));
+        $("#frmUpdate #" + inputID).attr("value", $.trim(g_current_selected.children("td:eq(" + i + ")").text()));
     }
-    g_cur_base = $.trim(rObject.children("td:eq(" + baseIndex + ")").text());
+    
+    var a =  $.trim(g_current_selected.children("td:eq(0)").text());
+    $("#3 #notify")[0].innerHTML =  "你正在修正的是" + $.trim(g_current_selected.children("td:eq(0)").text());
+
+    g_cur_base = $.trim(g_current_selected.children("td:eq(" + baseIndex + ")").text());
     if($("#checktype").val() == "device")
         g_cur_airline = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")").children("td:eq(" + i + ")").text();
 
@@ -161,9 +165,8 @@ $("#updateTab").bind("click", function() {
             }, "#frmUpdate #base")
     };
 });
-/*
- frmName:update一个,add一个
- */
+
+
 function checkTask(frmName) {
     var start = $.trim($(frmName + " #start").val());
     var end = $.trim($(frmName + " #end").val());

@@ -49,8 +49,6 @@ class Mode(object):
         """
         self.doc = {}
         self.query = {}
-
-
     def compileQuery(self):
         """
         虚拟函数:生成查询条件
@@ -115,7 +113,7 @@ class Mode(object):
     def __getattr__(self, key):
         if key in self.doc:
             return self.doc[key]
-        raise AttributeError("asdsad")    
+        raise AttributeError("mode %s不存在的属性"%(key,))
     
     def __enter__(self):
         pass

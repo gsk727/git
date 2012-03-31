@@ -14,6 +14,7 @@ from mode import BaseMode       # 每个线程一个
 from mode.stuff import stuffMap
 from forms import base
 
+
 baseView = Blueprint("base", __name__, url_prefix="/base")
 db = getDB("app")
 
@@ -43,7 +44,6 @@ def get_all():
                     data=data,
                    updateForm = updateFrm,
                    addForm = addFrm, 
-                    #tableMap=baseMap,
                     checkType="base"
                 )
 
@@ -55,12 +55,10 @@ def add():
        锁线程太暴力了。getMode thread_local data
        另外一个方法有木有?
     """
-    print "---------------------------------------------, 111111111111111111111111"
     addFrm = base.BaseAddForm()
     if addFrm.validate_on_submit():
         db.base.insert(addFrm.asDict())
         flash(_(u"我靠，终于添加成功了"), "success")   # 第二个参数与html的class相关
-
 
     return render_template_string("{% import 'form.html' as forms with context %}\
                 <div id='flashed'>\
@@ -72,33 +70,6 @@ def add():
                 </div>\
                  <div class='span4'>{{ forms.myForm(addForm, addURL) }}</div>", addForm=addFrm, addURL="base.add"
         )
-
-#    data = {}
-#    updateFrm = base.BaseUpdateForm()
-#    return render_template(
-#                    "base.html",
-#                    addURL="base.add",
-#                    updateURL="base.update",
-#                    data=data,
-#                   updateForm = updateFrm,
-#                   addForm = addFrm, 
-#                    #tableMap=baseMap,
-#                    checkType="base"
-#                )
-
-   # base_mode = getMode(BaseMode)
-    #base_mode.name = request.form["name"]
-    #base_mode.des = request.form["des"]
-   # err = base_mode.insert()                     # 这是一个怪异的操作
-   # msg = "ok"
-    #if err == "EXIST":
-        # web请求的这个处理, 耐人寻味的dd:
-        # 如果返回错误码，客户端先获取错误码对应的内容，如果没有错误
-        # 那就白传了这个错误文字，不如直接返回错误字符串
-      #  msg = u"已经不存在的基地不能添加"
-
-    # time.sleep(10)
-    # return jsonify(message=msg)
 
 
 @baseView.route("/<base>")
@@ -150,7 +121,7 @@ def get_entities(base, entity):
 def get_entity(base, entity, name):
     """
     查看制定entity的信息
-    """ 
+    """
     bregx = re.compile("^%s$"%(base, ), re.IGNORECASE)
     nregx = re.compile("^" + name + "$", re.IGNORECASE) 
     data = None
@@ -158,7 +129,7 @@ def get_entity(base, entity, name):
         data = db.user.find({"base": bregx, "name": nregx}, {"_id": 0, "password": 0})
     elif entity == "device":
         data = db.device.find({"base": bregx, "name": nregx}, {"_id": 0}) 
-    
+
     if data is not None: 
         addURL=".".join((entity, "add"))
         updateURL = ".".join((entity, "update"))
@@ -169,9 +140,8 @@ def get_entity(base, entity, name):
                         updateURL=updateURL,
                         checkType=entity,
             )
-    
     return abort(404)
- 
+
 
 @baseView.route("/", methods=["POST", ])
 def update():
@@ -184,27 +154,28 @@ def update():
       的实现，暂时还不知道怎么使用或移至
     """
     # name = request.form["name"] 如果不存在key(name)将导致 400 Bad Request
-    print "111111111111111111111111111"
     updateFrm = base.BaseUpdateForm()
+
     if updateFrm.validate_on_submit():
         base_mode = getMode(BaseMode)
         base_mode.clear()                             # 一直存在的实例.数据需要清理, cache
         base_mode.doc.update(updateFrm.asDict())
-        base_mode.updateQuery.update({"name": base_mode.name})
+        print base_mode.doc, "doc_____"
+        base_mode.query.update({"number": base_mode.number})
         ret = base_mode.update(upsert=False, safe=True)
-
+        
+        
         if ret["n"] == 0:
             error = u"不存在的记录"
-            # flash(_(u"不存在的记录"), error)
         elif ret["err"]:
             error = str(ret["err"])
         elif ret["updatedExisting"]:            # 这是更新
             error = "update success"
         else:
             error = "insert success"
-        print "2222222222222222222222222222"
         flash(_(u"%s"%(error, )), "error")
 
+    print updateFrm.asDict()
     return render_template_string("{% import 'form.html' as forms with context %}\
                 <div id='flashed'>\
                         <ul>\
@@ -215,38 +186,3 @@ def update():
                 </div>\
                  <div class='span4'>{{ forms.myForm(updateForm, updateURL) }}</div>", updateForm=updateFrm, updateURL="base.update"
         )
-
-
-#========================================================
-# # 使用ajax.post(ajax)做下面的请求
-#========================================================
-@baseView.route("/flymove", methods=["POST", "GET"])
-def fly_move():
-    """
-    @param frmBase: 到那个基地, form 提交
-    """
-    try:
-        flyID = int(request.form["flyID"])   # 飞机的ID
-        toBase = request.form["toBase"]
-        fromBase = request.form["fromBase"]
-        flyDes = request.form["flyDes"]         # 描述，可能是固定的原因
-    except:
-        raise AppException("参数错误")
-
-    # 可以直接查询db.base.find_one({"id":toBase"}}, 在python里面做分析
-    if not db.base.find_one({"id": toBase,
-                             "flyList": {"$elemMatch": {"$in": [flyID, ]}}}):
-        return "哪里跑"
-
-    if not db.base.find_one({"id": fromBase}):
-        return "目标不可大"
-    if not db.fly.find_one({"flyID": flyID, "parent": fromBase}):
-        return "数据不一致"
-
-    # 数据的移动操作， 这样的操作不是好的操作， 依旧是不安全的
-    db.base.update({"id": toBase},
-                    {"$pull": {"flyList": {"$elemMatch": {"$in": [flyID, ]}}}})
-    db.base.update({"id": fromBase},
-                   {"$addToSet": {"flyList": [flyID, flyDes, ]}})
-
-    return "ok"

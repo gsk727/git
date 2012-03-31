@@ -4,10 +4,10 @@
 from mode import Mode
 
 baseMap = [
-    ("name", u"名称"),
-    ("des", u"描述"),
-    ("stuff", u"员工"), # 怎么生成一个URL
-    
+    ("number", u"名称"),
+    ("name", u"描述"),
+    ("city", u"员工"), # 怎么生成一个URL
+    ("des", u"描述")
 ]
 
 
