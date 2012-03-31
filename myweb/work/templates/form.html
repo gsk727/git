@@ -9,10 +9,12 @@
 {%- endmacro %}
 
 {% macro myForm(form, url)  -%}
-	<form action="{{ url_for(url) }}" method="POST" id="{{ form.myID }}">
+	<form action="{{ url }}" method="POST" id="{{ form.myID }}">
 	    {{ form.hidden_tag() }}
         {% for tInfo in form.showAttributes %}
-            {{ form[tInfo].label }}
+            {% if tInfo != "noneInput" %}
+                {{ form[tInfo].label }}
+            {% endif %}
             {{ form[tInfo](class="span4") }} {{ render_errors(form[tInfo]) }}
         {% endfor %}
 

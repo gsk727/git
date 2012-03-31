@@ -23,19 +23,18 @@ def get(base):
     else:
        regx = re.compile(base, re.IGNORECASE)
        datas = db.base.find({"name": regx}, {"_id":0, "airlines":1, "name":1})
- 
+
     dType = request.args.get("dType", None) 
     if isinstance(dType, basestring) and dType.lower() == "json":
         return jsonify(message = datas.distinct("airlines.name"))
-    
+
     data = []
     for d in datas:
         t = d.get("airlines",[])
         for x in t:
             x["base"]=d["name"]
         data.extend(t)
-    
-  
+
 
     return render_template("showTable.html", 
                      data=data, 

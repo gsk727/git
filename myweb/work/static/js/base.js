@@ -128,6 +128,14 @@ $("#myTable tbody tr").bind("click", function() {
     g_cur_index = $(this).index();
 });
 
+
+$("#myTable tbody tr").bind("dblclick", function() {
+    g_cur_index = $(this).index();
+    g_current_selected = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")"); 
+    window.location.href = '/base/' + $.trim(g_current_selected.children("td:eq(0)").text());
+});
+
+
 $("#updateTab").bind("click", function() {
     current_clicked = "update";
     if( typeof g_cur_index == "undefined")
@@ -143,7 +151,7 @@ $("#updateTab").bind("click", function() {
         }
         $("#frmUpdate #" + inputID).attr("value", $.trim(g_current_selected.children("td:eq(" + i + ")").text()));
     }
-    
+
     var a =  $.trim(g_current_selected.children("td:eq(0)").text());
     $("#3 #notify")[0].innerHTML =  "你正在修正的是" + $.trim(g_current_selected.children("td:eq(0)").text());
 
@@ -185,6 +193,7 @@ function checkBase(frmName) {
 };
 
 function checkStuff(frmName) {
+    /*
     var name = $.trim($(frmName + " #name").val());
     var role = $.trim($(frmName + " #role").val());
     var begin = $.trim($(frmName + " #begin").val());
@@ -197,6 +206,7 @@ function checkStuff(frmName) {
         return alert("名字不能空");
     else if(begin.length == 0)
         return alert("入职日期不能空");
+    */
 
     return true;
 };

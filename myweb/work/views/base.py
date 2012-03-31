@@ -4,6 +4,7 @@ fcgi.py 的WSGIServer部分参数和默认值
 WSGIServer.__init__(multithreaded=True, multiprocess=False,..)
 Blueprint("base", __name__, url_prefix="/base")
 """
+import sys
 import re
 from flask import render_template, jsonify, render_template_string, Blueprint, request
 from flaskext.babel import gettext, lazy_gettext as _
@@ -12,7 +13,7 @@ from util import *
 from mode.base import baseMap
 from mode import BaseMode       # 每个线程一个
 from mode.stuff import stuffMap
-from forms import base
+from forms.base import BaseAddForm, BaseUpdateForm
 
 
 baseView = Blueprint("base", __name__, url_prefix="/base")
@@ -35,12 +36,12 @@ def get_all():
     if dataType == "json":
         return jsonify(message=[x.strip() for x in db.base.distinct("name")])
 
-    updateFrm = base.BaseUpdateForm()
-    addFrm = base.BaseAddForm()
+    updateFrm = BaseUpdateForm()
+    addFrm = BaseAddForm()
     return render_template(
                     "base.html",
-                    addURL="base.add",
-                    updateURL="base.update",
+                    addURL= url_for("base.add"),
+                    updateURL=url_for("base.update"),
                     data=data,
                    updateForm = updateFrm,
                    addForm = addFrm, 
@@ -55,37 +56,31 @@ def add():
        锁线程太暴力了。getMode thread_local data
        另外一个方法有木有?
     """
-    addFrm = base.BaseAddForm()
+    addFrm = BaseAddForm()
     if addFrm.validate_on_submit():
         db.base.insert(addFrm.asDict())
         flash(_(u"我靠，终于添加成功了"), "success")   # 第二个参数与html的class相关
 
-    return render_template_string("{% import 'form.html' as forms with context %}\
-                <div id='flashed'>\
-                        <ul>\
-                        {% for category, msg in get_flashed_messages(with_categories=true) %}\
-                            <li class='alert alert-{{ category }}'> {{ msg }}</li>\
-                        {% endfor %}\
-                        </ul>\
-                </div>\
-                 <div class='span4'>{{ forms.myForm(addForm, addURL) }}</div>", addForm=addFrm, addURL="base.add"
-        )
+    return render_template("add.html", addForm=addFrm, addURL= url_for("base.add"))
 
 
 @baseView.route("/<base>")
 def get(base):
     """
-    get用户信息的显示, 基地有多个实体, 如果<base> 
+    get用户信息的显示, 基地有多个实体, 如果<base>
     """
     # 正常的请求处理
     regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
-    data = db.base.find({"name": regx})
+    data = db.base.find({"number": regx})
+    addFrm = BaseAddForm()
+    updateFrm = BaseUpdateForm()
     return render_template(
-                    "showTable.html",
+                    "base.html",
                     addURL="base.add",
                     updateURL="base.update",
                     data=data,
-                    tableMap=baseMap,
+                    updateForm = updateFrm,
+                    addForm = addFrm, 
                     checkType="base"
                 )
 
@@ -96,25 +91,7 @@ def get_entities(base, entity):
     获取某基地下所有的实体信息
     url:
     """
-    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
-    # regx = re.compile(base, re.IGNORECASE)
-    data = None
-    if entity == "stuff":
-        data = db.user.find({"base": regx}, {"_id": 0, "password": 0})
-    elif entity == "device":
-        data = db.device.find({"base": regx}, {"_id": 0}) 
-
-    if data is not None: 
-        addURL=".".join((entity, "add"))
-        updateURL = ".".join((entity, "update"))
-        return render_template("showTable.html",
-                        data=data,
-                        tableMap=stuffMap,
-                        addURL=addURL,
-                        updateURL=updateURL,
-                        checkType=entity,
-            )
-    return abort(404)
+    return redirect(url_for("%s.get"%(entity, ), base=base))
 
 
 @baseView.route("/<base>/<entity>/<name>")
