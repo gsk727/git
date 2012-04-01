@@ -37,7 +37,7 @@
                     <thead>
                         <tr>
                             {% for attr in addForm.showAttributes %}
-                                <th> {{ addForm[attr].label }}</th>
+                                <th> {{ addForm[attr].label|striptags }}</th>
                             {% endfor %}
                        </tr>
                     </thead>

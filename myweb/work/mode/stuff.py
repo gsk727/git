@@ -2,24 +2,12 @@
 import re
 from mode import Mode
 
-stuffMap = [
-            ("email", u"电子邮件"),
-            ("name", u"名字"),
-            ("begin", u"入职时间"),
-            ("end", u"离职时间"),
-            ("role", u"职位"),
-            ("des", u"描述", ),
-            ("base", u"基地"),
-            ("password", u"密码"),
-            ("status", u"状态"),
-]
-
 
 class StuffMode(Mode):
     _cName = "user"
-    attributes = stuffMap
     database = "app"
     keys=("email", )
+    attributes = ["number", "email", 'name', "inDate", "outDate", 'departion', 'role' , 'duty', "info", "des"]
 
     def __init__(self):
         super(StuffMode, self).__init__()

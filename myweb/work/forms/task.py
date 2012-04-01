@@ -102,4 +102,18 @@ class TaskAddForm(TaskForm):
     def __init__(self):
         super(TaskAddForm, self).__init__(id ="frmAdd")
 
+class TaskShow(object):
+    showSimpleAttr = ["number", "name", "des",  "status", "owner"] # 简单视图属性
+    showAttributes = ["number", "name", "des", "createDate", "begin", "end", "status",
+                        "owner", "history"]
+    def __init__(self, form):
+        self.form = form        # 考虑弱引用
+    def __getitem__(self, k):
+        if k not in self.showAttributes:
+            raise AttributeError("%s"%(k,))
+        return getattr(self.form, k)
+    def __getattr__(self, k):
+        return self.__getitem__(k)
+
+
 

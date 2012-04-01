@@ -10,9 +10,7 @@ from flask import render_template, jsonify, render_template_string, Blueprint, r
 from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB, AppException  # , app_getID
 from util import *
-from mode.base import baseMap
 from mode import BaseMode       # 每个线程一个
-from mode.stuff import stuffMap
 from forms.base import BaseAddForm, BaseUpdateForm
 
 
@@ -67,11 +65,18 @@ def add():
 @baseView.route("/<base>")
 def get(base):
     """
-    get用户信息的显示, 基地有多个实体, 如果<base>
+    进入某基地
     """
     # 正常的请求处理
     regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
     data = db.base.find({"number": regx})
+    if data.count() == 0:
+        flash("不存在的基地, 请从下面选择一个", "error")
+        return redirect(url_for("base.get_all"))
+
+    # 这个地方的处理是为了url不必都带有一个<base>
+    # 另外一方面base在url中名字显示，而有不希望用户更改base,  丢到session里面算球
+    session['base'] = base
     addFrm = BaseAddForm()
     updateFrm = BaseUpdateForm()
     return render_template(
@@ -80,7 +85,7 @@ def get(base):
                     updateURL="base.update",
                     data=data,
                     updateForm = updateFrm,
-                    addForm = addFrm, 
+                    addForm = addFrm,
                     checkType="base"
                 )
 
@@ -100,14 +105,14 @@ def get_entity(base, entity, name):
     查看制定entity的信息
     """
     bregx = re.compile("^%s$"%(base, ), re.IGNORECASE)
-    nregx = re.compile("^" + name + "$", re.IGNORECASE) 
+    nregx = re.compile("^" + name + "$", re.IGNORECASE)
     data = None
-    if entity == "stuff":
-        data = db.user.find({"base": bregx, "name": nregx}, {"_id": 0, "password": 0})
-    elif entity == "device":
-        data = db.device.find({"base": bregx, "name": nregx}, {"_id": 0}) 
-
-    if data is not None: 
+    if db.base.find({"number":bregx}).count() == 0:
+        flash("不存在的基地，请选择", "error")
+    
+    return redirect(url_for("%s.get"))
+    
+    if data is not None:
         addURL=".".join((entity, "add"))
         updateURL = ".".join((entity, "update"))
         return render_template("showTable.html",
@@ -137,11 +142,8 @@ def update():
         base_mode = getMode(BaseMode)
         base_mode.clear()                             # 一直存在的实例.数据需要清理, cache
         base_mode.doc.update(updateFrm.asDict())
-        print base_mode.doc, "doc_____"
         base_mode.query.update({"number": base_mode.number})
         ret = base_mode.update(upsert=False, safe=True)
-        
-        
         if ret["n"] == 0:
             error = u"不存在的记录"
         elif ret["err"]:
@@ -152,7 +154,6 @@ def update():
             error = "insert success"
         flash(_(u"%s"%(error, )), "error")
 
-    print updateFrm.asDict()
     return render_template_string("{% import 'form.html' as forms with context %}\
                 <div id='flashed'>\
                         <ul>\

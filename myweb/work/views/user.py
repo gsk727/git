@@ -7,7 +7,7 @@ from bson import binary
 
 from flask import jsonify
 from flask import Blueprint
-from flask import url_for, redirect, render_template, request, session,  g,  render_template_string
+from flask import url_for, redirect, render_template, request, session, render_template_string
 
 from common import getDB
 from forms.account import LoginForm, EditPasswordForm
@@ -43,7 +43,6 @@ def user_edit_password():
     if form.validate_on_submit():
         username = session["name"]
         op = form.originPassword.data
-        print username, ",,,,,,,,,,,,,,,,,,,,,,"
         if not db.user.find_and_modify(query = {"name": username, "password": binary.Binary(md5.md5(op).digest())},
                                        update={"$set": {"password": binary.Binary(md5.md5(form.newPassword.data).digest())}}, 
                                        ):
@@ -121,13 +120,12 @@ def login_post():
                                  "password": binary.Binary(md5.md5(password).digest())},
                                 {"_id": 0})
     if userInfo is None:
-        return jsonify(message="用户名字或密码错误")  # 应该返回错误编码不是直接的文字
+        return jsonify(message="用户名字或密码错误") #  
     if userInfo.get("power", None) == None:
         return jsonify(message="你的没有权限")
 
     session["logined"] = True
     session["name"] =  userInfo["name"]
-    print userInfo     
     # g.power = userInfo["power"]
     return jsonify(message="ok")
 

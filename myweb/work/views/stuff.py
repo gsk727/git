@@ -16,7 +16,7 @@ from flaskext.babel import gettext, lazy_gettext as _
 from flask import redirect, url_for
 
 from flask import g
-from mode.stuff import stuffMap, StuffMode
+from mode.stuff import StuffMode
 from util import *
 from forms.stuff import StuffAddForm, StuffUpdateForm
 

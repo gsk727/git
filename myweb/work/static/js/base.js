@@ -75,6 +75,8 @@ $("#frmUpdate #base").bind("GETBASEOK", function(event, selName, index) {
     $(selName + " option:nth-child(" + (index + 1) + ")").attr("selected", true);
     g_cur_base = null;
 });
+
+
 function getBaseNames(callback, url, params, selName) {
     $.ajax({
         type : "GET",
@@ -137,6 +139,11 @@ $("#myTable tbody tr").bind("dblclick", function() {
         case 'base':
             window.location.href = '/'+ t + '/' + $.trim(g_current_selected.children("td:eq(0)").text());
             break;
+        case 'task':
+            window.location.href = '/' + t + '/' + $("#currentBase").val() + '/' + $.trim(g_current_selected.children("td:eq(0)").text());
+        case 'task_show':
+            $('#task_show').modal();
+            break;
         default:
             break;
     }
@@ -183,12 +190,14 @@ $("#updateTab").bind("click", function() {
 
 
 function checkTask(frmName) {
+    /*
     var start = $.trim($(frmName + " #start").val());
     var end = $.trim($(frmName + " #end").val());
     if(start.length == 0 || end.length == 0) {
         alert("没有制定时间");
         return false;
-    }
+    }*/
+
     return true;
 }
 
@@ -257,7 +266,6 @@ function showResponse(responseText, statusText) {
         alert( "什么情况出错了啊");
         return; 
     }
-    alert(current_clicked);
     switch(current_clicked) {
         case "add":
             $("#2")[0].innerHTML = responseText;

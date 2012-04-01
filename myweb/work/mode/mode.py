@@ -62,7 +62,7 @@ class Mode(object):
         主要完成更新，增加数据的时候唯一性检测
         """
         if not hasattr(self, "keys") or len(self.keys) <= 0:
-            return True
+            return False
 
         query = self.compileQuery() 
         return self.collection.find_one(query) is not None
@@ -105,7 +105,7 @@ class Mode(object):
 
 
     def __setattr__(self, key, value):
-        if key in [x[0] for x in self.attributes]:
+        if key in self.attributes:
             self.doc[key] = value
 
         object.__setattr__(self, key, value)

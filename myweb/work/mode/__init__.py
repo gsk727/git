@@ -4,5 +4,6 @@ from base import BaseMode
 from content import ContentMode
 from device import DeviceMode
 from mode import Mode
-__all__ = ["BaseMode", "ContentMode", "DeviceMode", "Mode"]
+from task import TaskMode
+__all__ = ["BaseMode", "ContentMode", "DeviceMode", "Mode", "TaskMode"]
 
