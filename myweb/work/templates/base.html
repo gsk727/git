@@ -21,6 +21,11 @@
 {% endblock %}
 
 {% block content %}
+       <ul>
+            {% for category, msg in get_flashed_messages(with_categories=true) %}
+                <li class='alert alert-{{ category }}'> {{ msg }}</li>
+            {% endfor %}
+       </ul>
     <input id="checkType" type="hidden" value="{{ checkType }}"/>
     <div class="tabbable">
         <ul class="nav nav-tabs">

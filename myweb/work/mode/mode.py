@@ -85,6 +85,7 @@ class Mode(object):
             query = dict([(x, self.doc.get(x, None))  for x in self.keys])
         else:
             query = self.query
+
         return self.collection.update(query, {"$set":self.doc}, **options)
 
 

@@ -6,12 +6,13 @@ Blueprint("base", __name__, url_prefix="/base")
 """
 import sys
 import re
-from flask import render_template, jsonify, render_template_string, Blueprint, request
+from flask import render_template, jsonify, render_template_string, Blueprint, request, flash
 from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB, AppException  # , app_getID
 from util import *
 from mode import BaseMode       # 每个线程一个
 from forms.base import BaseAddForm, BaseUpdateForm
+from flaskext.babel import gettext, lazy_gettext as _
 
 
 baseView = Blueprint("base", __name__, url_prefix="/base")
@@ -71,7 +72,7 @@ def get(base):
     regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
     data = db.base.find({"number": regx})
     if data.count() == 0:
-        flash("不存在的基地, 请从下面选择一个", "error")
+        flash(_(u"不存在的基地, 请从下面选择一个"), "error")
         return redirect(url_for("base.get_all"))
 
     # 这个地方的处理是为了url不必都带有一个<base>
@@ -108,7 +109,7 @@ def get_entity(base, entity, name):
     nregx = re.compile("^" + name + "$", re.IGNORECASE)
     data = None
     if db.base.find({"number":bregx}).count() == 0:
-        flash("不存在的基地，请选择", "error")
+        flash(_u("不存在的基地，请选择"), "error")
     
     return redirect(url_for("%s.get"))
     
@@ -152,7 +153,7 @@ def update():
             error = "update success"
         else:
             error = "insert success"
-        flash(_(u"%s"%(error, )), "error")
+        flash(_("%s"%(error, )), "error")
 
     return render_template_string("{% import 'form.html' as forms with context %}\
                 <div id='flashed'>\

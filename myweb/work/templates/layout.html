@@ -50,7 +50,11 @@
                                 {% else %}
                                     <li class="active"><a href="{{ url_for('base.get_all')}}" style="color:#32ff00">基地</a></li>
                                     <li><a href="{{ url_for('airline.get') }}" style="color:#32ff00">航班</a></li>
-                                    <li><a href="{{ url_for('task.get') }}" style="color:#32ff00">任务</a></li>
+
+                                    {% if session['base'] is defined %}
+                                        <li><a href="{{ url_for('base.get_entities', base= session['base'], entity='task') }}" style="color:#32ff00">任务</a></li>
+                                    {% endif %}
+
                                     <li> <a href="{{ url_for('user.show_self') }}" style="color:#32ff00"> {{ g.user }} </a> </li>
                                     <li> <a href="{{ url_for('user.logout') }}" style="color:#32ff00">  退出 </a> </li>
                                 {% endif %}

@@ -56,18 +56,26 @@
                             </tr>
                     </tbody>
                 </table>
+            <div> 
+                {% for c in data.content %}
+                <p> {{c.user }}:{{ c.content }}</p>
+              {% endfor %}
+            {{ forms.myForm(contentForm, submitURL) }}
+            </div>
             </div>
 
-            {% if addURL %}
+            {% if addURL is defined %}
                 <div class="tab-pane" id="2">
                     {{ forms.myForm(addForm, addURL) }}
                 </div>
             {% endif %}
-
-            <div class="tab-pane" id="3">
-                <div id="notify">  </div>                               <!-- 放置写死的数据 -->
-                {{ forms.myForm(updateForm, updateURL) }}   <!-- 数据根据实际情况填充 -->
-            </div>
+        
+            {% if updateURL is defined %}
+                <div class="tab-pane" id="3">
+                    <div id="notify">  </div>                               <!-- 放置写死的数据 -->
+                    {{ forms.myForm(updateForm, updateURL) }}   <!-- 数据根据实际情况填充 -->
+                </div>
+           {% endif %}
         </div><!--tab-content -->
     </div>
 
@@ -79,21 +87,7 @@
        
            <div class="modal-body">
                <div> 任务负责人：{{ data.owner }}</div>
-               <form action={{ submitURL }}, method="POST">
-                   <div>  <label>任务转移给:</label>
-                        <select>
-                            {% for s in stuff %}
-                                <option>{{ s.email }}-{{ s.name }}</option>
-                            {% endfor %}
-                        </select>
-                   </div>
-
-                   <div> <label for="remark"> 备注 </label>
-                        <textarea id="remark" name="Name" rows="8" cols="40" placeholder="不能是空"></textarea>
-                   </div>
-                   <input type="submit" value="确定" >
-               </form>
-
+                {{ forms.myForm(taskMoveForm, submitURL)}}
               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
 
               <h4>Popover in a modal</h4>
