@@ -1,33 +1,19 @@
 #-*- coding:utf-8 -*-
-
-from flask import Blueprint
-from flask import render_template, request, jsonify
-from common import getDB
 import re
 import time
+
+from flask import Blueprint, render_template, request, jsonify, url_for, flash
+from flaskext.babel import gettext, lazy_gettext as _
+from common import getDB
+from util import getMode
+from forms.task import TaskAddForm, TaskUpdateForm
+from mode.task import TaskMode
+
 
 db = getDB("app")
 
 
 taskView = Blueprint("task", __name__, url_prefix="/task")
-tableMap = [
-             ("base", u"基地"),
-             ("stuffID", u"职员ID"),
-             ("start", u"开始时间"),
-             ("end", u"结束时间"),
-             ("fromTime",  u"实际结束时间"),
-             ("toTime",  u"实际结束时间"),
-             ("diff",  u"实际用时(小时)"),
-             ("taskID",  u"任务ID"),
-             ("des", u"任务描述")
-             ]
-
-dbKeys = []
-tHeaders = []
-
-for x in tableMap:
-    dbKeys.append(x[0])
-    tHeaders.append(x[1])
 
 
 @taskView.route("/", methods=["GET", ], defaults={"base": None})
@@ -36,16 +22,20 @@ def get(base):
     """
     获取所有的task,所制定base的的
     """
+    addFrm = TaskAddForm()
+    updateFrm = TaskUpdateForm()
+    
     if base is None:
         data = db.task.find()
     else:
         data = db.task.find({"base": base})
 
-    return render_template("showTable.html",
+    return render_template("task.html",
                         data=data,
-						tableMap=tableMap,
-						addURL="task.add",
-						updateURL="task.update",
+                        addForm=addFrm,
+                        addURL=url_for("task.add", base=base),
+                        updateForm=updateFrm,
+                        updateURL=url_for("task.update"),
                         checkType="task",
             )
 
@@ -63,11 +53,11 @@ def update():
     taskID = request.form.get("taskID", "").strip()
     status = request.form.get("status", "").strip()
 
-    regx = re.compile("^%s$"%(stuffID, ), re.IGNORECASE)
+    regx = re.compile("^%s$" % (stuffID,), re.IGNORECASE)
     if not db.user.find_one({"stuffID": regx}):
         return jsonify(message=u"不存在的员工")
 
-    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
+    regx = re.compile("^%s$" % (base,), re.IGNORECASE)
     if not db.base.find_one({"base": regx}):
         return jsonify(message=u"不存在的基地")
 
@@ -91,42 +81,17 @@ def update():
     return jsonify(message=u"ok")
 
 
-@taskView.route("/add", methods=["POST", ])
-def add():
-    # parse_request_form()
-    base = request.form.get("base", "").strip()
-    stuffID = request.form.get("stuffID", "").strip()
-    start = request.form.get("start", "").strip()
-    end = request.form.get("end", "").strip()
-    fromTime = request.form.get("fromTime", "").strip()
-    toTime = request.form.get("toTime", "").strip()
-    des = request.form.get("des", "").strip()
-    #status = request.form.get("status", "").strip()
-    # taskID = request.form.get("taskID", "").strip()
+@taskView.route("/<base>/add", methods=["POST", ])
+def add(base):
+    addFrm = TaskAddForm()
+    regx = re.compile("^%s$" % (base,), re.IGNORECASE)
+    if not db.base.find_one({"number": regx}):
+        flash(_(u"不存在的基地"), "error")
+    elif addFrm.validate_on_submit():
+        task = getMode(TaskMode)
+        task.doc.update(addFrm.asDict())
+        task.insert()
+        flash(_(u"总算成功了啊"), "success")
 
-    status = "free"
-    regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
-    if not db.base.find_one({"name": regx}):
-        return jsonify(message=u"不存在的基地")
+    return render_template("add.html", addForm = addFrm, addURL = url_for("task.add", base=base))
 
-    if len(stuffID) != 0:   # 添加任务立即分配
-        regx = re.compile("^"+stuffID+"$", re.IGNORECASE)
-        if not db.user.find_one({"name": regx}):
-            return jsonify(message=u"不存在的员工")
-        else:
-            status = "running"
-
-    db.task.insert({
-                    "base": base,
-                    "stuffID": stuffID,
-                    "start": start,
-                    "end": end,
-                    "fromTime": fromTime,
-                    "toTime": toTime,
-                    "des": des,
-                    "status": status,
-                    "taskID": int(time.time())
-    })
-
-    return jsonify(message="ok")
-    

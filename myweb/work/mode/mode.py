@@ -71,7 +71,7 @@ class Mode(object):
     def save(self):
         assert len(self.doc) > 0, "先添加数据"
         self.collection.save(self.doc)
-    
+
 
     def update(self, keyUpdate = True, **options):
         """
@@ -98,7 +98,7 @@ class Mode(object):
 
     def find(self, query, fields):
         return self.collection.find(query, fields)
-    
+
 
     def find_one(self, query, fields):
         return self.collection.find_one(query, fields)
@@ -107,14 +107,14 @@ class Mode(object):
     def __setattr__(self, key, value):
         if key in [x[0] for x in self.attributes]:
             self.doc[key] = value
-        
+
         object.__setattr__(self, key, value)
 
     def __getattr__(self, key):
         if key in self.doc:
             return self.doc[key]
         raise AttributeError("mode %s不存在的属性"%(key,))
-    
+
     def __enter__(self):
         pass
     def __exit__(self):
@@ -126,7 +126,7 @@ class Mode(object):
 
     def __setitem__(self, k, v):
         return setattr(self, k, v)
-    
+
     def __getitem__(self, k):
         return getattr(self, k)
 

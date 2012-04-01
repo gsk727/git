@@ -131,8 +131,15 @@ $("#myTable tbody tr").bind("click", function() {
 
 $("#myTable tbody tr").bind("dblclick", function() {
     g_cur_index = $(this).index();
-    g_current_selected = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")"); 
-    window.location.href = '/base/' + $.trim(g_current_selected.children("td:eq(0)").text());
+    g_current_selected = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")");
+    t = $("#checkType").val();
+    switch(t) {
+        case 'base':
+            window.location.href = '/'+ t + '/' + $.trim(g_current_selected.children("td:eq(0)").text());
+            break;
+        default:
+            break;
+    }
 });
 
 
@@ -156,7 +163,7 @@ $("#updateTab").bind("click", function() {
     $("#3 #notify")[0].innerHTML =  "你正在修正的是" + $.trim(g_current_selected.children("td:eq(0)").text());
 
     g_cur_base = $.trim(g_current_selected.children("td:eq(" + baseIndex + ")").text());
-    if($("#checktype").val() == "device")
+    if($("#checkType").val() == "device")
         g_cur_airline = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")").children("td:eq(" + i + ")").text();
 
     var cType = $("#checkType").val();
