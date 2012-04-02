@@ -2,7 +2,7 @@
 import re
 import time
 
-from flask import Blueprint, render_template, request, jsonify, url_for, flash, session
+from flask import Blueprint, render_template, request, jsonify, url_for, flash, session, render_template_string
 from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB
 from util import getMode
@@ -39,6 +39,45 @@ def get(base):
                         base = base
             )
 
+@taskView.route("/user/<username>")
+def get_userTask(username):
+    data = db.task.find({"owner": username})
+    addFrm = TaskAddForm()
+    return render_template_string(u"""
+        <ul>
+            {% for category, msg in get_flashed_messages(with_categories=true) %}
+                <li class='alert alert-{{ category }}'> {{ msg }}</li>
+            {% endfor %}
+        </ul>
+            <div class="tab-pane active" id="1">
+                <table class="table table-bordered table-striped" style="text-align:center" id="myTable">
+                    <thead>
+                        <tr>
+                            {% for attr in taskShow.showSimpleAttr %}
+                                <th> {{ taskShow[attr].label|striptags }} </th>
+                            {% endfor %}
+                       </tr>
+                    </thead>
+                    <tbody>
+                        {% for d in data %}
+                            <tr>
+                                {% for tInfo in taskShow.showSimpleAttr %}
+                                    {% if tInfo == "email" %}
+                                        <td> <a href="mailto:{{ d[tInfo] }}"> {{ d[tInfo] }}</a></td>
+                                    {% elif tInfo =="stuff" and checkType == "base"  %}
+                                        <td> <a href="{{ url_for('base.get_entities', base=d['name'], entity='stuff') }}"> 查看员工 </a></td>
+                                    {% else %}
+                                        <td> {{ d[tInfo] }} </td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            """, taskShow = TaskShow(addFrm), data = data)
+    
+    
 @taskView.route("/<base>/<taskid>", methods=["POST", "GET"])
 def get_task(base, taskid):
     def updateProperty(form):

@@ -10,20 +10,20 @@
 {% block content %}
     <div class="row">
             <div class="well span4" style="width:100px">
-                <ul class="nav nav-list">
+                <ul class="nav nav-list" id="dir">
                   <li class="nav-header">基本信息</li>
                   <li class="active"><a href="#">个人信息</a></li>
-                  <li><a href="#">任务信息</a></li>
+                  <li><a href="{{  url_for('task.get_userTask', username=session['name']) }}">任务信息</a></li>
  
                   <li class="nav-header">管理信息</li>
                   <li><a href="{{ url_for('base.get_all') }}">基地</a></li>
                   <li><a href="{{ url_for('airline.get') }}">航班</a></li>
-                  <li> <a  href="{{  url_for('task.get') }}">任务</a></li>
+                  <li> <a  href="{{  url_for('task.get_userTask', username=session['name']) }}">任务</a></li>
                   <li><a href="{{ url_for('stuff.get') }}">员工</a></li>
                 </ul>
             </div>
        
-        <div id="show" class="span4">
+        <div id="show" class="span4" style="width: 800px">
             sdasdas
         </div>
     </div>
