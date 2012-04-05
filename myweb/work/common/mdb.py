@@ -34,7 +34,6 @@ def get_conList():
     for con in cons:
         hostdom = con.getElementsByTagName("host")[0]
         host = getText(hostdom.childNodes, 1)
-
         portdom = con.getElementsByTagName("port")[0]
         port = getText(portdom.childNodes, 1)
 
@@ -58,7 +57,6 @@ def initDB():
     global dbs
     conList = get_conList()  # reload
     for con in conList:
-        print con
         dbname = con[2]
         dbs["connection"] = pymongo.Connection(con[0], con[1])
         dbs[dbname] = dbs["connection"][dbname.strip()]
@@ -67,6 +65,8 @@ def initDB():
 
 
 def getDB(name):
+    """
+    """
     global isInited
     if not isInited:
         initDB()
@@ -91,8 +91,6 @@ def swithDB(fromdb, todb, reuse=True):
         if fromdb not in dbs or todb not in dbs:
             raise CfgException("db from %s to %s failed" % (fromdb, todb))
         return dbs[todb]
-
-    assert(1 != 1)
 
 
 if __name__ == "__main__":

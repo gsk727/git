@@ -1,0 +1,10 @@
+.desktop_disappear_animation2 {
+    -moz-transition: left 5s linear 0s, opacity 0.2s linear 0s;
+    left: 200px;
+    opacity: 0;
+}
+.desktop_disappear_animation1 {
+    -moz-transition: left 10s linear 0s, opacity 0.2s linear 0s;
+    left: 2000px;
+    opacity: 1;
+}

@@ -6,7 +6,7 @@ Blueprint("base", __name__, url_prefix="/base")
 """
 import sys
 import re
-from flask import render_template, jsonify, render_template_string, Blueprint, request, flash
+from flask import render_template, jsonify, render_template_string, Blueprint, request, flash, abort
 from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB, AppException  # , app_getID
 from util import *
@@ -30,6 +30,9 @@ def base_beforeRequest():
 
 @baseView.route("/")
 def get_all():
+    """
+    获取所有基地的摘要信息
+    """
     data = db.base.find({}, {"_id": 0})
     dataType = request.args.get("dataType", None)
     if dataType == "json":
@@ -51,14 +54,13 @@ def get_all():
 @baseView.route("/add", methods=["POST", ])
 @synchronize
 def add():
-    """信息的添加
-       锁线程太暴力了。getMode thread_local data
-       另外一个方法有木有?
+    """添加一个新的基地，
+    线程安全，同步函数
     """
     addFrm = BaseAddForm()
     if addFrm.validate_on_submit():
         db.base.insert(addFrm.asDict())
-        flash(_(u"我靠，终于添加成功了"), "success")   # 第二个参数与html的class相关
+        flash(_(u"添加成功了"), "success")   # 第二个参数与html的class相关
 
     return render_template("add.html", addForm=addFrm, addURL= url_for("base.add"))
 
@@ -66,7 +68,8 @@ def add():
 @baseView.route("/<base>")
 def get(base):
     """
-    进入某基地
+    查看指定基地的信息
+    @param base: 基地的编号， 这个地方应该有权限的检测
     """
     # 正常的请求处理
     regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
@@ -75,15 +78,13 @@ def get(base):
         flash(_(u"不存在的基地, 请从下面选择一个"), "error")
         return redirect(url_for("base.get_all"))
 
-    # 这个地方的处理是为了url不必都带有一个<base>
-    # 另外一方面base在url中名字显示，而有不希望用户更改base,  丢到session里面算球
-    session['base'] = base
+    session['base'] = base              # 记录用的查看的当前base
     addFrm = BaseAddForm()
     updateFrm = BaseUpdateForm()
     return render_template(
                     "base.html",
-                    addURL="base.add",
-                    updateURL="base.update",
+                    # addURL=url_for("base.add"),
+                    updateURL=url_for("base.update"),
                     data=data,
                     updateForm = updateFrm,
                     addForm = addFrm,
@@ -94,33 +95,36 @@ def get(base):
 @baseView.route("/<base>/<entity>", methods=["GET", ])
 def get_entities(base, entity):
     """
-    获取某基地下所有的实体信息
-    url:
+    获取某基地下属于实体范畴的信息
+    @param entity: 员工，飞机，设备等等
+    @return: 跳转到/<entity>/<base>。即 entity.get 函数
     """
-    return redirect(url_for("%s.get"%(entity, ), base=base))
-
+    if entity in ("stuff", "airline", "task", "device"):
+        return redirect(url_for("%s.get"%(entity, ), base=base))
+    else:
+        abort(404);
 
 @baseView.route("/<base>/<entity>/<name>")
 def get_entity(base, entity, name):
     """
-    查看制定entity的信息
+    获取某基地下实体entity下指定<name>的信息
+    @param name: entity记录中的key，比如entity是task，那么name应该是taskid 
     """
     bregx = re.compile("^%s$"%(base, ), re.IGNORECASE)
     nregx = re.compile("^" + name + "$", re.IGNORECASE)
     data = None
     if db.base.find({"number":bregx}).count() == 0:
         flash(_u("不存在的基地，请选择"), "error")
-    
     return redirect(url_for("%s.get"))
-    
+
     if data is not None:
         addURL=".".join((entity, "add"))
         updateURL = ".".join((entity, "update"))
         return render_template("showTable.html",
                         data=data,
                         tableMap=stuffMap,
-                        addURL=addURL,
-                        updateURL=updateURL,
+                        addURL=url_for(addURL),
+                        updateURL=url_for(updateURL),
                         checkType=entity,
             )
     return abort(404)
@@ -131,13 +135,9 @@ def update():
     """
       信息的更新, 可以同时更新信息，后面的覆盖前面的。
       为了防止数据的覆盖，每个线程一个BaseMode
-      权限说明:
-      需要从session获取用户名字,做身份和权限的验证
-      base_mode 算是thread-local data吧 threading.local, 和werkzeug中local
-      的实现，暂时还不知道怎么使用或移至
+      权限说明:需要从session获取用户名字,做身份和权限的验证
     """
-    # name = request.form["name"] 如果不存在key(name)将导致 400 Bad Request
-    updateFrm = base.BaseUpdateForm()
+    updateFrm = BaseUpdateForm()
 
     if updateFrm.validate_on_submit():
         base_mode = getMode(BaseMode)
@@ -155,6 +155,7 @@ def update():
             error = "insert success"
         flash(_("%s"%(error, )), "error")
 
+    return render_template("update.html", updateForm=updateFrm, updateURL=url_for("base.update"))
     return render_template_string("{% import 'form.html' as forms with context %}\
                 <div id='flashed'>\
                         <ul>\

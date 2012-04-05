@@ -169,7 +169,6 @@ def add(base):
         tm.doc.update(addFrm.asDict())
         tm.doc.update({"base": base})
         tm.insert()
-        print tm.collection
         flash(_(u"总算成功了啊"), "success")
 
     return render_template("add.html", addForm = addFrm, addURL = url_for("task.add", base=base))

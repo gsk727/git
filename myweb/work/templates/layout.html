@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 {% block meta %}
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 {% endblock %}
 
 <head>
@@ -55,7 +58,7 @@
                                         <li><a href="{{ url_for('base.get_entities', base= session['base'], entity='task') }}" style="color:#32ff00">任务</a></li>
                                     {% endif %}
 
-                                    <li> <a href="{{ url_for('user.show_self') }}" style="color:#32ff00"> {{ g.user }} </a> </li>
+                                    <li> <a href="{{ url_for('user.show', name=session['name']) }}" style="color:#32ff00"> {{ g.user }} </a> </li>
                                     <li> <a href="{{ url_for('user.logout') }}" style="color:#32ff00">  退出 </a> </li>
                                 {% endif %}
                             </ul>

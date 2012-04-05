@@ -6,7 +6,7 @@
         <collection> user </collection>
         <collection> devices </collection>
         <collection> air </collection>
-        <collection> base </collection>
+        <collection> base </collection>        
         <port> 27017 </port>
     </connection>
 </root>

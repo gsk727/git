@@ -12,6 +12,7 @@ from views import stuffView
 from views import taskView, airlineView
 from views import contentView
 from flaskext.babel import Babel
+from flask import request
 
 app = Flask(__name__)
 app.register_blueprint(userView)
@@ -49,7 +50,6 @@ def page_not_found(error):
 @app.before_request
 def before_request():
     g.user = session.get('name')
-
 
 @app.template_filter("dateFormat")
 def data_format(s):
@@ -89,6 +89,5 @@ def copyright():
 
 if __name__ == "__main__":
     app.config.from_object("appcfg")
-    print app.config
     app.run()
 

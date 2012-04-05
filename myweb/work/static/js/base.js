@@ -152,6 +152,7 @@ $("#myTable tbody tr").bind("dblclick", function() {
 
 $("#updateTab").bind("click", function() {
     current_clicked = "update";
+    $("div #3")[0].innerHTML = updateDivHTML;
     if( typeof g_cur_index == "undefined")
         return false;
     g_current_selected = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")");
@@ -167,7 +168,7 @@ $("#updateTab").bind("click", function() {
     }
 
     var a =  $.trim(g_current_selected.children("td:eq(0)").text());
-    $("#3 #notify")[0].innerHTML =  "你正在修正的是" + $.trim(g_current_selected.children("td:eq(0)").text());
+    // $("#3 #notify")[0].innerHTML =  "你正在修正的是" + $.trim(g_current_selected.children("td:eq(0)").text());
 
     g_cur_base = $.trim(g_current_selected.children("td:eq(" + baseIndex + ")").text());
     if($("#checkType").val() == "device")

@@ -9,7 +9,7 @@ from functools import update_wrapper
 from flask import session, render_template, g, flash
 from common import getDB
 from mode import Mode
-from flask import redirect, url_for
+from flask import redirect, url_for, request
 
 _g_lock = Lock()
 db = getDB("app")
@@ -34,7 +34,7 @@ def app_verifyUser(**options):
     现在用户的ID， 同时也为Session ID
     我靠，猥琐的一个函数
     """
-    fun = []                    # 我靠
+    fun = []                    # 
     def wrapper(method):
         # fun = method # 这样的fun属于wrapper函数而不是app的变量
         fun.append(method)
@@ -43,17 +43,14 @@ def app_verifyUser(**options):
     def default(**moptions):
         name = session.get("name")
         if name is None:
-            return redirect(url_for("user.get"))
+            return redirect(url_for("user.get", next= request.url))
         userInfo = db.user.find_one({"name": name})
         if not userInfo:
-            return redirect(url_for("user.get"))
+            return redirect(url_for("user.get"), next= request.url)
 
         if options.get("power", False) and not userInfo.get("power", None):
                 return jsonify(message=u"你的没有权限")
         name, pwd = userInfo["name"], userInfo["password"]
-        g.user = name
-        # flash(u"欢迎回来", "info")
-        g.logined = True
         fun[0](**moptions)     # 可以提前返回
 
     return wrapper
