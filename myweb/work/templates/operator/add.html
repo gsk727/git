@@ -1,4 +1,4 @@
-{% import 'form.html' as forms with context %}
+{% import 'macro/form.html' as forms with context %}
 <div id='flashed'>
     <ul>
         {% for category, msg in get_flashed_messages(with_categories=true) %}

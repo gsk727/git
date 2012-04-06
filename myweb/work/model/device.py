@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-from mode import Mode
+from model import Model
 
 deviceMap = [
             ("name", u"名字"),
@@ -12,12 +12,12 @@ deviceMap = [
             ("histroy", u"历史记录"),
 ]
 
-class DeviceMode(Mode):
+class DeviceModel(Model):
     _cName = "device"
     attributes = deviceMap
     database = "app"
     keys = ("name", )
 
     def __init__(self):
-        super(DeviceMode, self).__init__()
+        super(DeviceModel, self).__init__()
 

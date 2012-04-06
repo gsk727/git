@@ -3,8 +3,8 @@ import copy
 from flask import Blueprint
 from flask import render_template, request, jsonify
 from common import getDB, AppException
-from util import app_verifyUser, synchronize, getMode
-from mode.device import deviceMap, DeviceMode
+from util import app_verifyUser, synchronize, getModel
+from model.device import deviceMap, DeviceModel
 
 
 
@@ -52,7 +52,7 @@ def get(name):
 def add():
     """用于添加设备,设备编号是唯一的,或者收到添加。
     """
-    deviceInfo = getMode(DeviceMode)
+    deviceInfo = getModel(DeviceModel)
     
     # 没有添加验证
     for d, _ in deviceMap:
@@ -66,7 +66,7 @@ def add():
 def update():
     """用于添加设备,设备编号是唯一的,或者收到添加。
     """
-    deviceInfo = getMode(DeviceMode)
+    deviceInfo = getModel(DeviceModel)
     # 没有添加验证
     for d, _ in deviceMap:
         deviceInfo[d] = request.form.get(d)

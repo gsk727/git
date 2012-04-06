@@ -2,7 +2,7 @@
 """
 """
 import re
-from mode import Mode
+from model import Model
 from common import getDB
 db = getDB("app")
  
@@ -45,11 +45,11 @@ airlineMap = [
    ]
 
 
-class AirlineMode(Mode):
+class AirlineModel(Model):
     _cName = "airline"
     database = "app"
     attributes = airlineMap
     keys = ("name", )
     def __init__(self):
-        super(AirlineMode, self).__init__()
+        super(AirlineModel, self).__init__()
 

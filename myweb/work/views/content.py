@@ -1,8 +1,8 @@
 #-*- coding: utf-8 -*-
 from flask import Blueprint, render_template
-from mode.content import contentMap, ContentMode
+from model.content import contentMap, ContentModel
 from flask import request, jsonify
-from util import synchronize, getMode
+from util import synchronize, getModel
 from common import getDB
 
 
@@ -45,7 +45,7 @@ def update():
     """
     数据的更新
     """
-    updateInfo = getMode(ContentMode)
+    updateInfo = getModel(ContentModel)
     for k, _, in contentMap:
         updateInfo[k] = request.form.get(k, "").strip()
     

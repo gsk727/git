@@ -13,13 +13,13 @@ class LocalData(local):
     def __getitem__(self, k):
         return getattr(self, k)
 
-class MetaMode(type):
+class MetaModel(type):
     """
     Mode的元类，模板
     """
     def __new__(cls, name, bases, attrs):
-        super_new = super(MetaMode, cls).__new__
-        parents = [b for b in bases if isinstance(b, MetaMode)]
+        super_new = super(MetaModel, cls).__new__
+        parents = [b for b in bases if isinstance(b, MetaModel)]
         if not parents:
            return super_new(cls, name, bases, attrs)
  
@@ -37,11 +37,11 @@ class MetaMode(type):
 class MyCollectin(Collection):
     pass
 
-class Mode(object):
+class Model(object):
     """
     分离出来一个collection类吗？
     """
-    __metaclass__ = MetaMode
+    __metaclass__ = MetaModel
 
     def __init__(self):
         """

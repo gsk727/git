@@ -16,7 +16,7 @@ from flaskext.babel import gettext, lazy_gettext as _
 from flask import redirect, url_for
 
 from flask import g
-from mode.stuff import StuffMode
+from model.stuff import StuffModel
 from util import *
 from forms.stuff import StuffAddForm, StuffUpdateForm
 
@@ -54,7 +54,7 @@ def update():
     """
     updateFrm = StuffUpdateForm()
     if updateFrm.validate_on_submit():     # 在此处验证表单
-        m = getMode(StuffMode)
+        m = getModel(StuffModel)
         m.query.update({"number": updateFrm.number.data})
         m.doc.update(updateFrm.asDict())
         m.update()
@@ -70,7 +70,7 @@ def add(base):
     msg = "ok"
     addFrm = StuffAddForm()
     if addFrm.validate_on_submit():     # 在此处验证表单
-        sm = getMode(StuffMode)
+        sm = getModel(StuffModel)
         sm.doc.update(addFrm.asDict())
         sm.doc.update({"base": base})
         sm.password = binary.Binary(md5.md5("123456").digest())

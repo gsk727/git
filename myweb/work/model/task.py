@@ -1,14 +1,14 @@
 #-*- coding:utf-8 -*-
 """
 """
-from mode import Mode
+from model import Model
 
-class TaskMode(Mode):
+class TaskModel(Model):
     _cName = "task"
     database = "app"
     attributes = ["number", "name", "des", "createDate", "begin", "end", "status",
                         "owner", "history"]
 
     def __init__(self):
-        super(TaskMode, self).__init__()
+        super(TaskModel, self).__init__()
 

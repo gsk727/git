@@ -110,7 +110,7 @@ function addBaseToSel(data, textStatus, selName) {
 $("#addTab").bind("click", function() {
     current_clicked = "add";
     var cType = $("#checkType").val();
-    $("div #2")[0].innerHTML = addDivHTML;
+    $("div #add")[0].innerHTML = addDivHTML;
 
     switch(cType) {
         case 'base':
@@ -148,11 +148,29 @@ $("#myTable tbody tr").bind("dblclick", function() {
             break;
     }
 });
+$("#showTab").live("click", function() {
+     if (current_clicked != "show")
+    {
+        $("div #"+current_clicked).remove("desktop_show_prepare2 desktop_show_animation2")
+        .addClass("desktop_disappear_prepare2 desktop_disappear_animation2");
+    }
+    current_clicked = "show";
+    var b = $(this)[0];
+    
+    $("div #show").removeClass("desktop_disappear_prepare2 desktop_disappear_animation2");
+    $("div #show").addClass("desktop_show_prepare2 desktop_show_animation2");
+});
 
-
-$("#updateTab").bind("click", function() {
+$("#updateTab").live("click", function() {
+    if (current_clicked != "update")
+    {
+        $("div #"+current_clicked).remove("desktop_show_prepare2 desktop_show_animation2")
+                                                .addClass("desktop_disappear_prepare2 desktop_disappear_animation2");
+    }
+    $("div #update").removeClass("desktop_disappear_prepare2 desktop_disappear_animation2").addClass("desktop_show_prepare2 desktop_show_animation2");
     current_clicked = "update";
-    $("div #3")[0].innerHTML = updateDivHTML;
+
+    $("div #update")[0].innerHTML = updateDivHTML;
     if( typeof g_cur_index == "undefined")
         return false;
     g_current_selected = $("#myTable tr:nth-child(" + (g_cur_index + 1) + ")");
@@ -269,10 +287,10 @@ function showResponse(responseText, statusText) {
     }
     switch(current_clicked) {
         case "add":
-            $("#2")[0].innerHTML = responseText;
+            $("#add")[0].innerHTML = responseText;
             break;
         case "update":
-            $("#3")[0].innerHTML = responseText;
+            $("#update")[0].innerHTML = responseText;
             break;
         case "show":
             break;

@@ -1,14 +1,14 @@
 #-*- coding:utf-8 -*-
 """
 """
-from mode import Mode
+from model import Model
 
 
-class BaseMode(Mode):
+class BaseModel(Model):
     _cName = "base"
     database = "app"
     attributes = ["number", "name", "city", "des"]
     keys = ("name", )
     def __init__(self):
-        super(BaseMode, self).__init__()
+        super(BaseModel, self).__init__()
 

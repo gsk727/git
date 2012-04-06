@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<header>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-alert.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/test.css') }}" type="text/css" rel="stylesheet">
+    <script>
+        $(function(){
+             $(document).delegate("#test", "click", function(e){alert("delegata"); });
+            $("#test").bind("click", function(e){ alert("click");   });
+            $("#test").live("click", function(e){ alert("live"); e.preventDefault(); e.stopPropagation();});
+            $("#timings-demo-btn").toggle(function(){
+                    $(this).next("div#timings-demo").addClass("timings-demo-hover");},
+                    function(){ $(this).next("div#timings-demo").removeClass("timings-demo-hover");});
+        });
+    </script>
+</header>
+<p id="test" class="alert-error"> 121321321321 </p>
+
+
+<div class="my_class">  saasdasd dasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    <br>
+    asdasdasdassd
+</div>
+<a id="timings-demo-btn">click</a>
+
+<div id="timings-demo">
+    <div id="ease" class="demo-box">Ease</div>
+    <div id="ease-in" class="demo-box">Ease-in</div>
+    <div id="ease-out" class="demo-box">Ease-out</div>
+    <div id="ease-in-out" class="demo-box">Ease-in-out</div>
+    <div id="linear" class="demo-box">Linear</div>
+    <div id="cubic-bezier" class="demo-box">Cubic-bezier</div>
+</div>

@@ -8,8 +8,8 @@ from flask import Blueprint, render_template
 from common import getDB
 from flask import request, jsonify
 
-from util import synchronize, getMode
-from mode.airline import airlineMap, AirlineMode
+from util import synchronize, getModel
+from model.airline import airlineMap, AirlineModel
 
 db = getDB("app")
 airlineView = Blueprint("airline", __name__, url_prefix="/airline")
@@ -46,7 +46,7 @@ def get(base):
 
 @airlineView.route("/", methods=["POST",])
 def update():
-    updateInfo = getMode(AirlineMode)
+    updateInfo = getModel(AirlineModel)
 
     for k, _, checkFun in airlineMap:
         updateInfo[k] = request.form.get(k, "").strip() 

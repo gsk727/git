@@ -8,7 +8,7 @@ from threading import Lock
 from functools import update_wrapper
 from flask import session, render_template, g, flash
 from common import getDB
-from mode import Mode
+from model import Model
 from flask import redirect, url_for, request
 
 _g_lock = Lock()
@@ -67,8 +67,8 @@ def release_mode(threadRef, name, tid):
         _localModes[name].pop(tid)
 
 
-def getMode(cls, name=None):
-    assert issubclass(cls, Mode), u"基类不是Mode"
+def getModel(cls, name=None):
+    assert issubclass(cls, Model), u"基类不是Mode"
 
     t = threading.current_thread()
     tid = t.ident

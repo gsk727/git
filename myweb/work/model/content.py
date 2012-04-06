@@ -1,5 +1,5 @@
 #-*-coding: utf-8 -*-
-from mode import Mode
+from model import Model
 
 contentMap = [
     ("id",  u"序号"), 
@@ -12,7 +12,7 @@ contentMap = [
     ("author_email", "email"),
 ]
 
-class ContentMode(Mode):
+class ContentModel(Model):
     _cName = "content"
     attributes = contentMap
     database = "app"
@@ -24,12 +24,11 @@ class ContentMode(Mode):
         """ 
         只是意思上要生成ID,至于ID的可能会赋予更多的含义
         """
-        print self.doc
         try:
             maxID = int(self.collection.find().sort([("id", -1)])[0].get("id", 1))
         except:
             maxID = 1
 
         self.doc["id"] = maxID + 1
-        super(ContentMode, self).insert()
+        super(ContentModel, self).insert()
  

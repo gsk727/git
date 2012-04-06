@@ -77,6 +77,9 @@ def index():
 
 app.route("/test/test", endpoint="123", redirect_to='/')(None)
 
+@app.route("/test")
+def test():
+    return render_template("test/test.html")
 
 @app.route("/left")
 def left():

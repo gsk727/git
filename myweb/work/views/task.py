@@ -5,13 +5,13 @@ import time
 from flask import Blueprint, render_template, request, jsonify, url_for, flash, session, render_template_string
 from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB
-from util import getMode
+from util import getModel
 from forms.task import TaskAddForm, TaskUpdateForm, TaskShow, TaskMoveForm, TaskContentForm
-from mode import TaskMode
+from model import TaskModel
 
 
 db = getDB("app")
-taskView = Blueprint("task", __name__, url_prefix="/task")
+taskView = Blueprint("task", __name__, url_prefix="/task", template_folder="templates")
 
 
 @taskView.route("/", methods=["GET", ], defaults={"base": None})
@@ -28,7 +28,7 @@ def get(base):
     else:
         data = db.task.find({"base": base})
 
-    return render_template("task.html",
+    return render_template("task/task.html",
                         data=data,
                         taskShow = TaskShow(addFrm),
                         addForm=addFrm,
@@ -81,7 +81,7 @@ def get_userTask(username):
 @taskView.route("/<base>/<taskid>", methods=["POST", "GET"])
 def get_task(base, taskid):
     def updateProperty(form):
-        task = getMode(TaskMode)
+        task = getModel(TaskModel)
         task.clear()
         task.query.update({"number": taskid})
         task.doc.update(form.asDict())
@@ -92,7 +92,7 @@ def get_task(base, taskid):
     addFrm = TaskAddForm()
     taskMoveFrm = TaskMoveForm()
     taskContentFrm= TaskContentForm()
-
+    updateFrm = TaskUpdateForm()
 
     data = db.task.find_one({"number": taskid}, {"_id": 0})
     if data is None:
@@ -100,20 +100,21 @@ def get_task(base, taskid):
 
     if taskMoveFrm.validate_on_submit() and updateProperty(taskMoveFrm):
         flash(_(u"更新成功"), "success")
-
-    if taskContentFrm.validate_on_submit():
+    elif taskContentFrm.validate_on_submit():
         c = {}
         c["content"] = taskContentFrm.asDict()
         c["content"].update({"user": session["name"]})
         db.task.update({"number": taskid}, {"$push": c})
         flash(_(u"发表成功"), "success")
         data = db.task.find_one({"number": taskid}, {"_id": 0})
-    return render_template("task_show.html",
+    return render_template("task/task_show.html",
                         data=data,
                         taskShow = TaskShow(addFrm),
                         contentForm = taskContentFrm,
                         taskMoveForm = taskMoveFrm,
                         checkType="task_show",
+                        updateForm = updateFrm,
+                        updateURL = url_for("task.update"),
                         submitURL = url_for("task.get_task", base=base, taskid = taskid)
             )
 
@@ -165,11 +166,11 @@ def add(base):
     if not db.base.find_one({"number": regx}):
         flash(_(u"不存在的基地"), "error")
     elif addFrm.validate_on_submit():
-        tm = getMode(TaskMode)
+        tm = getModel(TaskModel)
         tm.doc.update(addFrm.asDict())
         tm.doc.update({"base": base})
         tm.insert()
         flash(_(u"总算成功了啊"), "success")
 
-    return render_template("add.html", addForm = addFrm, addURL = url_for("task.add", base=base))
+    return render_template("operator/add.html", addForm = addFrm, addURL = url_for("task.add", base=base))
 

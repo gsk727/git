@@ -1,0 +1,12 @@
+{% import 'macro/form.html' as forms with context %}
+<div id='flashed'>
+    <ul>
+        {% for category, msg in get_flashed_messages(with_categories=true) %}
+            <div id="flash" class="fade in">
+               <a class="close" data-dismiss="alert">×</a>
+                <li class='alert alert-{{ category }}'> {{ msg }}</li>
+            </div>
+        {% endfor %}
+    </ul>
+</div>
+<div class='baseupdate'>{{ forms.myForm(updateForm, updateURL) }}</div>

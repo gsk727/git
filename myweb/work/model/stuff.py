@@ -1,9 +1,9 @@
 #-*- coding: utf-8 -*-
 import re
-from mode import Mode
+from model import Model
 
 
-class StuffMode(Mode):
+class StuffModel(Model):
     _cName = "user"
     database = "app"
     keys=("email", )
@@ -20,5 +20,4 @@ class StuffMode(Mode):
         email = self.doc["email"]  # :)
         p = re.compile(email, re.IGNORECASE)
         return {"email": p}
-        
  

@@ -10,12 +10,12 @@ from flask import render_template, jsonify, render_template_string, Blueprint, r
 from flaskext.babel import gettext, lazy_gettext as _
 from common import getDB, AppException  # , app_getID
 from util import *
-from mode import BaseMode       # 每个线程一个
+from model import BaseModel       # 每个线程一个
 from forms.base import BaseAddForm, BaseUpdateForm
 from flaskext.babel import gettext, lazy_gettext as _
 
 
-baseView = Blueprint("base", __name__, url_prefix="/base")
+baseView = Blueprint("base", __name__, url_prefix="/base", template_folder="templates")
 db = getDB("app")
 
 
@@ -41,12 +41,12 @@ def get_all():
     updateFrm = BaseUpdateForm()
     addFrm = BaseAddForm()
     return render_template(
-                    "base.html",
+                    "base/base.html",
                     addURL= url_for("base.add"),
                     updateURL=url_for("base.update"),
                     data=data,
-                   updateForm = updateFrm,
-                   addForm = addFrm, 
+                    updateForm = updateFrm,
+                    addForm = addFrm, 
                     checkType="base"
                 )
 
@@ -62,7 +62,7 @@ def add():
         db.base.insert(addFrm.asDict())
         flash(_(u"添加成功了"), "success")   # 第二个参数与html的class相关
 
-    return render_template("add.html", addForm=addFrm, addURL= url_for("base.add"))
+    return render_template("operator/add.html", addForm=addFrm, addURL= url_for("base.add"))
 
 
 @baseView.route("/<base>")
@@ -73,16 +73,17 @@ def get(base):
     """
     # 正常的请求处理
     regx = re.compile("^%s$"%(base, ), re.IGNORECASE)
-    data = db.base.find({"number": regx})
+    data = db.base.find({"number": regx}, {"_id":0})
+
     if data.count() == 0:
-        flash(_(u"不存在的基地, 请从下面选择一个"), "error")
+        flash(u"不存在的基地, 请从下面选择一个", "error")
         return redirect(url_for("base.get_all"))
 
     session['base'] = base              # 记录用的查看的当前base
     addFrm = BaseAddForm()
     updateFrm = BaseUpdateForm()
     return render_template(
-                    "base.html",
+                    "base/base.html",
                     # addURL=url_for("base.add"),
                     updateURL=url_for("base.update"),
                     data=data,
@@ -134,13 +135,13 @@ def get_entity(base, entity, name):
 def update():
     """
       信息的更新, 可以同时更新信息，后面的覆盖前面的。
-      为了防止数据的覆盖，每个线程一个BaseMode
+      为了防止数据的覆盖，每个线程一个BaseModell
       权限说明:需要从session获取用户名字,做身份和权限的验证
     """
     updateFrm = BaseUpdateForm()
 
     if updateFrm.validate_on_submit():
-        base_mode = getMode(BaseMode)
+        base_mode = getModel(BaseModel)
         base_mode.clear()                             # 一直存在的实例.数据需要清理, cache
         base_mode.doc.update(updateFrm.asDict())
         base_mode.query.update({"number": base_mode.number})
@@ -154,15 +155,6 @@ def update():
         else:
             error = "insert success"
         flash(_("%s"%(error, )), "error")
-
-    return render_template("update.html", updateForm=updateFrm, updateURL=url_for("base.update"))
-    return render_template_string("{% import 'form.html' as forms with context %}\
-                <div id='flashed'>\
-                        <ul>\
-                        {% for category, msg in get_flashed_messages(with_categories=true) %}\
-                            <li class='alert alert-{{ category }}'> {{ msg }}</li>\
-                        {% endfor %}\
-                        </ul>\
-                </div>\
-                 <div class='span4'>{{ forms.myForm(updateForm, updateURL) }}</div>", updateForm=updateFrm, updateURL="base.update"
-        )
+    flash("11111111111111111111111111", "error")
+    flash("sdasdasdasdasdasdsadasda", "success")
+    return render_template("operator/update.html", updateForm=updateFrm, updateURL=url_for("base.update"))
