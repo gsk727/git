@@ -41,7 +41,7 @@ def get_all():
     updateFrm = BaseUpdateForm()
     addFrm = BaseAddForm()
     return render_template(
-                    "base/base.html",
+                    "base/newbase.html",
                     addURL= url_for("base.add"),
                     updateURL=url_for("base.update"),
                     data=data,
@@ -83,7 +83,7 @@ def get(base):
     addFrm = BaseAddForm()
     updateFrm = BaseUpdateForm()
     return render_template(
-                    "base/base.html",
+                    "base/newbase.html",
                     # addURL=url_for("base.add"),
                     updateURL=url_for("base.update"),
                     data=data,

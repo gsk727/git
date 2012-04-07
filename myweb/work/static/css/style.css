@@ -5,6 +5,17 @@
     transition: all 5s ease 3s;
 }
 
+.desktop_default {
+    left: 2000px;
+    position: absolute;
+    overflow: visible
+}
+
+.desktop_active{
+    opacity: 1;
+    display: block;
+}
+
 .desktop_disappear_prepare1 {
     left: 0;
     opacity: 1
@@ -35,12 +46,14 @@
 }
 
 .desktop_show_prepare2 {
+    position:absolute;
     left: -2000px;
-    opacity: 0
+    opacity: 0;
 }
 
 .desktop_show_animation2 {
-    left: 0;
+    position:absolute;
+    left: 200px;
     opacity: 1;
-    -moz-transition: left .5s linear,opacity .2s linear .25s
+    -moz-transition: left 0.5s linear,opacity .2s linear .25s
 }

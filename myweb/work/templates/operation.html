@@ -27,8 +27,8 @@
                                 {% for tInfo in tableMap %}
                                     {% if tInfo.0 == "email" %}
                                         <td> <a href="mailto:{{ d[tInfo.0] }}"> {{ d[tInfo.0] }}</a></td>
-                                    {% elif tInfo.0 =="stuff" and checkType == "base"  %}
-                                        <td> <a href="{{ url_for('base.get_entities', base=d['name'], entity='stuff') }}"> 查看员工 </a></td>
+                                    {% elif tInfo.0 =="stuff" %}
+                                        <td> <a href="{{ url_for('base.get_stuff', base=d['name']) }}"> 查看员工 </a></td>
                                     {% else %}
                                         <td> {{ d[tInfo.0] }} </td>
                                     {% endif %}

@@ -1,32 +1,16 @@
-$("#test2").bind("click", function(event){
-    //alert(event);
-    var t = $(this);
-    var b = t.find("p");
-    var a = $(this)[0];
-    alert(t.find("p").first().text());
+$("#div1").bind("click", function(){
+    $(this).removeClass().addClass("desktop_show_prepare2");
+    var that = $(this);
     
+    setTimeout(function(){
+        that.addClass("desktop_show_animation2");
+    }, 100);
+});
 
-    var arr = ["a", "b", "c"];
-    arr = jQuery.map(arr, function(v,i){
-        v = "a" + i;
-        return v;
-    });
-    
-    
-    jQuery.each(arr, function(i, n){
-        //alert(i + n);
-    });
-    
-     
-})
+$("#div2").bind("click", function(){
+    alert("div2");
+});
 
-$("#pBtn").bind("mouseover", function(event){
-    var a = $(this);
-    var $this = $(this);
-    if ($("#testDiv").length != 0)
-            return
-    html="<div id='testDiv'>xxxxx </div>"
-    $("body").append(html); 
-    $("#testDiv").css({"border-style":"solid",  "border-width":"1", "border-color":"#0000ff"});
-
+$("#div3").bind("click", function(){
+    alert("div3");
 });

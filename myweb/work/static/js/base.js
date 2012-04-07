@@ -1,3 +1,36 @@
+// new base js
+$(".btn-group button").live("click", function(e){
+   var that = $(this);
+   $(this).parent().find('.active').removeClass("active");
+   $(this).addClass("active");
+});
+
+control_btn = ["btnShow", "btnUpdate", "btnAdd"];
+
+control_btn.forEach(function(item, index, array){
+    $("#" +  item).bind("click", function(e){
+        var d = $(this).attr("for");
+        
+        for(var i = 0; i < array.length; ++i){
+            if (i == index) continue;
+            name = array[i];
+            var f = $("#"+name).attr("for");
+             $("#"+f).removeClass("desktop_active desktop_show_prepare2 desktop_show_animation2").
+                addClass("desktop_disappear_prepare2");
+            setTimeout(function(divname){
+                return function() {
+                     $("#"+divname).addClass("desktop_disappear_animation2 desktop_default");
+                }}(f), 1);
+        }
+        $("#"+d).removeClass("desktop_default");
+        $("#"+d).removeClass("desktop_disappear_prepare2 desktop_disappear_animation2")
+                     .addClass("desktop_show_prepare2");
+        setTimeout(function(){
+            $("#"+d).addClass("desktop_show_animation2");
+        }, 1);
+    });
+})
+
 var currnet_clicked = "show" // update, add
 var checkMap = {
     "stuff" : checkStuff,
@@ -149,26 +182,41 @@ $("#myTable tbody tr").bind("dblclick", function() {
     }
 });
 $("#showTab").live("click", function() {
+    alert(current_clicked);
      if (current_clicked != "show")
     {
-        $("div #"+current_clicked).remove("desktop_show_prepare2 desktop_show_animation2")
-        .addClass("desktop_disappear_prepare2 desktop_disappear_animation2");
+        var c_c = current_clicked;
+        $("div #"+current_clicked).removeClass("desktop_show_prepare2 desktop_show_animation2")
+        .addClass("desktop_disappear_prepare2");
+        setTimeout(function(){
+            $("div #"+c_c).addClass("desktop_disappear_animation2");
+        }, 1);
     }
     current_clicked = "show";
-    var b = $(this)[0];
-    
-    $("div #show").removeClass("desktop_disappear_prepare2 desktop_disappear_animation2");
-    $("div #show").addClass("desktop_show_prepare2 desktop_show_animation2");
+    $("div #show").removeClass("desktop_disappear_prepare2 desktop_disappear_animation2").addClass("desktop_show_prepare2");
+    setTimeout(function(){
+        if(current_clicked == "show")
+            $("div #show").addClass("desktop_show_animation2");
+    }, 1);
 });
 
 $("#updateTab").live("click", function() {
     if (current_clicked != "update")
     {
         $("div #"+current_clicked).remove("desktop_show_prepare2 desktop_show_animation2")
-                                                .addClass("desktop_disappear_prepare2 desktop_disappear_animation2");
+                                                .addClass("desktop_disappear_prepare2");
+        setTimeout(function(){
+                                $("div #"+current_clicked).addClass("desktop_disappear_animation2");
+                        }, 1);
     }
-    $("div #update").removeClass("desktop_disappear_prepare2 desktop_disappear_animation2").addClass("desktop_show_prepare2 desktop_show_animation2");
+    
     current_clicked = "update";
+
+    $("div #update").removeClass().addClass("desktop_show_prepare2");
+    setTimeout(function(){
+        if(current_clicked == "update")
+            $("div #update").addClass("desktop_show_animation2");
+    }, 1);
 
     $("div #update")[0].innerHTML = updateDivHTML;
     if( typeof g_cur_index == "undefined")
